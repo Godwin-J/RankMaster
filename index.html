@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>RankMaster SEO</title>
-    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <title>Antodigitechs SEO</title>
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
 
     <!-- Bootstrap CSS -->
     <link
@@ -18,16 +18,16 @@
       rel="stylesheet"
     />
 
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Animate.css -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
-
-    <!-- Hover.css -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.2/css/hover-min.css"
     />
 
     <!-- AOS -->
@@ -37,211 +37,544 @@
     />
 
     <style>
-      html { scroll-behavior: smooth; }
-      body {
-        background: #101014 !important;
-        color: #fff !important;
-        overflow-x: hidden;
-      }
       :root {
-        --primary-color: #2563eb;
-        --secondary-color: #1e40af;
-        --accent-color: #f59e0b;
-        --dark-color: #101014;
-        --darker-color: #18181c;
-        --light-color: #fff;
-        --card-gradient: linear-gradient(135deg, #18181c 60%, #101014 100%);
-        --card-shadow: 0 8px 32px 0 rgba(37,99,235,0.25), 0 1.5px 6px 0 rgba(30,64,175,0.15);
-      }
-      .hero,
-      .services-section,
-      .about-section,
-      .gallery-section,
-      .contact-section,
-      .story-section,
-      .gallery-contact-section,
-      .services-contact-section,
-      .contact-form,
-      .card,
-      .service-card,
-      .featured-service-card,
-      .gallery-item,
-      .contact-card {
-        background: #101014 !important;
-        color: #fff !important;
-        box-shadow: var(--card-shadow) !important;
-        border: none !important;
-      }
-      .navbar,
-      footer {
-        background: #101014 !important;
-        color: #fff !important;
-      }
-      .bg-white,
-      .bg-light {
-        background: #101014 !important;
-        color: #fff !important;
-      }
-      .card-body,
-      .section-title,
-      .section-subtitle,
-      h1, h2, h3, h4, h5, h6, p, span, small, label, li, ul, ol, a, .lead {
-        color: #fff !important;
-      }
-      .text-dark,
-      .text-muted,
-      .text-light,
-      .text-primary,
-      .text-danger,
-      .text-warning {
-        color: #fff !important;
-        opacity: 1 !important;
-      }
-      .form-control,
-      .form-select {
-        background: #18181c !important;
-        color: #fff !important;
-        border: 1px solid #23232a !important;
-      }
-      .form-control:focus,
-      .form-select:focus {
-        background: #18181c !important;
-        color: #fff !important;
-        border-color: #2563eb !important;
-        box-shadow: 0 0 0 2px #2563eb33;
-      }
-      .btn-custom,
-      .btn-primary,
-      .btn-outline-primary,
-      .btn-outline-light {
-        color: #fff !important;
-        box-shadow: 0 4px 16px 0 rgba(37,99,235,0.25);
-        background: linear-gradient(135deg, #23243a 0%, #101014 100%) !important;
-        border: none !important;
-      }
-      .btn-outline-light {
-        border: 1px solid #fff !important;
-      }
-      .social-links a {
-        background: #18181c !important;
-        color: #fff !important;
-        box-shadow: 0 2px 8px 0 rgba(37,99,235,0.15);
-      }
-      .social-links a:hover {
-        background: #2563eb !important;
-        color: #fff !important;
+        --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        --success-gradient: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        --warning-gradient: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        --dark-gradient: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 100%);
+        --glass-bg: rgba(255, 255, 255, 0.1);
+        --glass-border: rgba(255, 255, 255, 0.2);
+        --neon-blue: #00f5ff;
+        --neon-purple: #bf00ff;
+        --neon-pink: #ff006e;
+        --glow-shadow: 0 0 20px rgba(0, 245, 255, 0.5);
       }
 
-      /* Hero section */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: #0a0a0a;
+        color: #ffffff;
+        overflow-x: hidden;
+        line-height: 1.6;
+      }
+
+      /* Enhanced Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: linear-gradient(180deg, #1a1a2e, #16213e);
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: var(--primary-gradient);
+        border-radius: 10px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--accent-gradient);
+      }
+
+      /* Animated Background */
+      .animated-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: linear-gradient(45deg, #0a0a0a, #1a1a2e, #16213e, #0f4c75);
+        background-size: 400% 400%;
+        animation: gradientShift 15s ease infinite;
+      }
+
+      @keyframes gradientShift {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      /* Floating Particles */
+      .floating-particles {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        pointer-events: none;
+      }
+
+      .particle {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background: var(--neon-blue);
+        border-radius: 50%;
+        animation: float 6s ease-in-out infinite;
+        box-shadow: 0 0 10px var(--neon-blue);
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-20px) rotate(180deg);
+        }
+      }
+
+      /* Enhanced Navbar */
+      .navbar {
+        background: rgba(10, 10, 10, 0.95) !important;
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      }
+
+      .navbar.scrolled {
+        background: rgba(10, 10, 10, 0.98) !important;
+        box-shadow: 0 8px 32px rgba(0, 245, 255, 0.2);
+      }
+
+      .navbar-brand {
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 700;
+        font-size: 1.8rem;
+        background: var(--accent-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: pulse 2s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+      }
+
+      .nav-link {
+        color: #ffffff !important;
+        font-weight: 500;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .nav-link::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: -100%;
+        width: 100%;
+        height: 2px;
+        background: var(--accent-gradient);
+        transition: left 0.3s ease;
+      }
+
+      .nav-link:hover::before {
+        left: 0;
+      }
+
+      .nav-link:hover {
+        color: var(--neon-blue) !important;
+        text-shadow: 0 0 10px var(--neon-blue);
+      }
+
+      /* Hero Section */
       .hero {
         height: 100vh;
-        background: linear-gradient(135deg, rgba(37,99,235,0.9), rgba(30,64,175,0.8)),
-                    url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2015&q=80') center/cover no-repeat;
-        color: white;
+        background: linear-gradient(
+            135deg,
+            rgba(10, 10, 10, 0.8),
+            rgba(26, 26, 46, 0.8)
+          ),
+          url("https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2015&q=80")
+            center/cover no-repeat;
         display: flex;
         align-items: center;
         justify-content: center;
         text-align: center;
         position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(
+          circle at 50% 50%,
+          rgba(0, 245, 255, 0.1) 0%,
+          transparent 70%
+        );
+        animation: pulse-bg 4s ease-in-out infinite;
+      }
+
+      @keyframes pulse-bg {
+        0%,
+        100% {
+          opacity: 0.3;
+        }
+        50% {
+          opacity: 0.6;
+        }
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
       }
 
       .hero h1 {
-        font-size: 3.5rem;
-        font-weight: 700;
-        margin-bottom: 1rem;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 4.5rem;
+        font-weight: 900;
+        background: var(--accent-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 1.5rem;
+        text-shadow: 0 0 30px rgba(0, 245, 255, 0.5);
+        animation: slideInDown 1s ease-out;
+      }
+
+      @keyframes slideInDown {
+        from {
+          transform: translateY(-100px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
       }
 
       .hero .lead {
-        font-size: 1.4rem;
-        margin-bottom: 2rem;
+        font-size: 1.5rem;
+        margin-bottom: 2.5rem;
+        background: linear-gradient(135deg, #ffffff, #b3b3b3);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: slideInUp 1s ease-out 0.3s both;
       }
 
-      .custom-shape-divider-bottom {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        overflow: hidden;
-        line-height: 0;
-        transform: rotate(180deg);
+      @keyframes slideInUp {
+        from {
+          transform: translateY(100px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
       }
 
-      .custom-shape-divider-bottom svg {
+      /* Enhanced Buttons */
+      .btn-neon {
+        background: transparent;
+        border: 2px solid var(--neon-blue);
+        color: var(--neon-blue) !important;
+        padding: 15px 40px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
         position: relative;
-        display: block;
-        width: calc(140% + 1.3px);
-        height: 120px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        border-radius: 50px;
+        box-shadow: 0 0 20px rgba(0, 245, 255, 0.3);
+        text-decoration: none !important;
+        z-index: 1;
       }
 
-      .custom-shape-divider-bottom .shape-fill {
-        fill: #ffffff;
+      .btn-neon::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(0, 245, 255, 0.2),
+          transparent
+        );
+        transition: left 0.5s;
+        z-index: -1;
       }
 
-      /* Services Section */
-      .services-section {
-        padding: 80px 0;
-        background: linear-gradient(135deg, #181c2f 0%, #23243a 100%);
+      .btn-neon:hover::before {
+        left: 100%;
       }
 
-      .service-card {
-        background: var(--card-gradient) !important;
+      .btn-neon:hover {
+        color: #ffffff !important;
+        background: rgba(0, 245, 255, 0.2) !important;
+        box-shadow: 0 0 30px rgba(0, 245, 255, 0.6);
+        transform: translateY(-3px);
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+      }
+
+      .btn-gradient {
+        background: var(--primary-gradient) !important;
+        border: none;
+        color: white !important;
+        padding: 15px 40px;
+        font-weight: 600;
+        border-radius: 50px;
+        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        text-decoration: none !important;
+        z-index: 1;
+      }
+
+      .btn-gradient::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--secondary-gradient);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: -1;
+      }
+
+      .btn-gradient:hover::before {
+        opacity: 1;
+      }
+
+      .btn-gradient:hover {
+        color: white !important;
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+      }
+
+      /* Glowing Cards */
+      .glow-card {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: 20px;
         padding: 2.5rem;
-        box-shadow: var(--card-shadow) !important;
-        transition: all 0.3s ease;
-        height: 100%;
-        border: none;
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
       }
 
-      .service-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 20px 40px rgba(37,99,235,0.2);
+      .glow-card::before {
+        content: "";
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: var(--primary-gradient);
+        z-index: -1;
+        border-radius: 22px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
       }
 
+      .glow-card:hover::before {
+        opacity: 1;
+      }
+
+      .glow-card:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 20px 40px rgba(0, 245, 255, 0.3);
+      }
+
+      /* Service Icons with Animation */
       .service-icon {
-        width: 80px;
-        height: 80px;
-        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-        color: white;
+        width: 100px;
+        height: 100px;
+        background: var(--accent-gradient);
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 2rem;
-        margin: 0 auto 1.5rem;
+        font-size: 2.5rem;
+        color: white;
+        margin: 0 auto 2rem;
+        position: relative;
+        animation: rotate 10s linear infinite;
+        box-shadow: 0 0 30px rgba(0, 245, 255, 0.5);
       }
 
-      /* Featured Service Cards */
-      .featured-service-card {
-        background: var(--card-gradient) !important;
-        border-radius: 20px;
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .service-icon::before {
+        content: "";
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        right: -5px;
+        bottom: -5px;
+        background: var(--primary-gradient);
+        border-radius: 50%;
+        z-index: -1;
+        animation: rotate 10s linear infinite reverse;
+      }
+
+      /* Floating Elements */
+      .float-animation {
+        animation: floating 6s ease-in-out infinite;
+      }
+
+      @keyframes floating {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      /* Gradient Text */
+      .gradient-text {
+        background: var(--accent-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 700;
+      }
+
+      /* Section Styling */
+      .section {
+        padding: 120px 0;
+        position: relative;
         overflow: hidden;
-        box-shadow: var(--card-shadow) !important;
-        transition: all 0.3s ease;
+      }
+
+      .section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(
+            circle at 30% 40%,
+            rgba(102, 126, 234, 0.1) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 20%,
+            rgba(191, 0, 255, 0.1) 0%,
+            transparent 50%
+          );
+        pointer-events: none;
+      }
+
+      /* Services Section */
+      .services-section {
+        background: linear-gradient(
+          135deg,
+          rgba(10, 10, 10, 0.9),
+          rgba(26, 26, 46, 0.9)
+        );
+      }
+
+      .featured-service-card {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 25px;
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         cursor: pointer;
         height: 100%;
+        position: relative;
+      }
+
+      .featured-service-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.1),
+          transparent
+        );
+        transition: left 0.6s;
+      }
+
+      .featured-service-card:hover::before {
+        left: 100%;
       }
 
       .featured-service-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 25px 50px rgba(37,99,235,0.2);
+        transform: translateY(-15px) rotateX(5deg);
+        box-shadow: 0 25px 50px rgba(0, 245, 255, 0.3);
+        border-color: rgba(0, 245, 255, 0.3);
       }
 
       .service-image {
-        position: relative;
-        height: 200px;
+        height: 250px;
         overflow: hidden;
+        position: relative;
       }
 
       .service-image img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: transform 0.3s ease;
+        transition: transform 0.6s ease;
+        filter: brightness(0.8);
       }
 
       .featured-service-card:hover .service-image img {
-        transform: scale(1.1);
+        transform: scale(1.2) rotate(2deg);
+        filter: brightness(1);
       }
 
       .service-overlay {
@@ -250,547 +583,1833 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: linear-gradient(135deg, rgba(37,99,235,0.8), rgba(30,64,175,0.8));
+        background: linear-gradient(
+          135deg,
+          rgba(0, 245, 255, 0.8),
+          rgba(191, 0, 255, 0.8)
+        );
         display: flex;
         align-items: center;
         justify-content: center;
         opacity: 0;
-        transition: all 0.3s ease;
+        transition: all 0.4s ease;
       }
 
       .featured-service-card:hover .service-overlay {
         opacity: 1;
       }
 
-      .service-icon-featured {
-        width: 60px;
-        height: 60px;
-        background: white;
-        color: var(--primary-color);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.5rem;
-        transform: scale(0.8);
-        transition: transform 0.3s ease;
-      }
-
-      .featured-service-card:hover .service-icon-featured {
-        transform: scale(1);
-      }
-
       .service-content {
         padding: 2rem;
+        position: relative;
       }
 
       .service-content h4 {
-        color: var(--dark-color);
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 700;
         margin-bottom: 1rem;
-      }
-
-      .read-more {
-        color: var(--primary-color);
-        font-weight: 600;
-        font-size: 0.9rem;
-        transition: color 0.3s ease;
-      }
-
-      .featured-service-card:hover .read-more {
-        color: var(--secondary-color);
-      }
-
-      /* Services Contact Section */
-      .services-contact-section {
-        margin-top: 3rem;
-      }
-
-      .contact-info-compact {
-        font-size: 0.9rem;
-      }
-
-      .contact-info-compact i {
-        opacity: 0.8;
-      }
-
-      /* Story Section */
-      .story-section {
-        margin-top: 4rem;
-      }
-
-      .contact-info-story .row > div {
-        margin-bottom: 1rem;
-      }
-
-      .contact-info-story h6 {
-        color: var(--dark-color);
-        font-weight: 600;
-      }
-
-      /* Gallery Contact Section */
-      .gallery-contact-section {
-        margin-top: 3rem;
-      }
-
-      .contact-details .contact-item {
-        padding: 1rem 0;
-        border-bottom: 1px solid #e5e7eb;
-      }
-
-      .contact-details .contact-item:last-child {
-        border-bottom: none;
-      }
-
-      .contact-details h6 {
-        color: var(--dark-color);
-        font-weight: 600;
-      }
-
-      .office-hours .hours-item {
-        padding: 0.5rem 0;
-        border-bottom: 1px solid #e5e7eb;
-      }
-
-      .office-hours .hours-item:last-child {
-        border-bottom: none;
-      }
-
-      /* Contact Section Enhancements */
-      .office-timing-details {
-        backdrop-filter: blur(10px);
-      }
-
-      .timing-table {
-        background: rgba(255,255,255,0.05);
-        border-radius: 10px;
-        padding: 1rem;
-      }
-
-      .timing-row {
-        font-size: 0.95rem;
-      }
-
-      .quick-contact .btn {
-        margin-bottom: 0.5rem;
-      }
-
-      /* Modal Enhancements */
-      .modal-content {
-        border-radius: 20px;
-        border: none;
-      }
-
-      .modal-header {
-        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-        color: white;
-        border-radius: 20px 20px 0 0;
-      }
-
-      .modal-header .btn-close {
-        filter: invert(1);
-      }
-
-      .modal-body img {
-        border: 3px solid var(--light-color);
-        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-        color: white;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 2rem;
-        margin: 0 auto 1.5rem;
+        background: var(--accent-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
       }
 
       /* About Section */
       .about-section {
-        padding: 80px 0;
-        background: var(--card-gradient) !important;
+        background: linear-gradient(
+          135deg,
+          rgba(16, 33, 62, 0.9),
+          rgba(10, 10, 10, 0.9)
+        );
       }
 
       .about-img {
-        border-radius: 20px;
-        box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        border-radius: 25px;
         overflow: hidden;
+        position: relative;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
       }
 
-      /* Contact Section */
-      .contact-section {
-        padding: 80px 0;
-        background: linear-gradient(135deg, var(--dark-color), #374151);
-        color: white;
+      .about-img::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          45deg,
+          rgba(0, 245, 255, 0.2),
+          rgba(191, 0, 255, 0.2)
+        );
+        opacity: 0;
+        transition: opacity 0.3s ease;
       }
 
-      .contact-card {
-        background: rgba(255,255,255,0.1);
-        backdrop-filter: blur(10px);
-        border-radius: 15px;
+      .about-img:hover::before {
+        opacity: 1;
+      }
+
+      /* Stats Cards */
+      .stat-card {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
         padding: 2rem;
         text-align: center;
         transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
       }
 
-      .contact-card:hover {
-        background: rgba(255,255,255,0.15);
-        transform: translateY(-5px);
+      .stat-card::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: conic-gradient(
+          from 0deg,
+          transparent,
+          rgba(0, 245, 255, 0.1),
+          transparent
+        );
+        animation: rotate 6s linear infinite;
+        opacity: 0;
+        transition: opacity 0.3s ease;
       }
 
-      .contact-icon {
-        width: 60px;
-        height: 60px;
-        background: var(--accent-color);
-        color: white;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.5rem;
-        margin: 0 auto 1rem;
+      .stat-card:hover::before {
+        opacity: 1;
+      }
+
+      .stat-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 245, 255, 0.2);
+      }
+
+      .stat-number {
+        font-size: 3rem;
+        font-weight: 900;
+        background: var(--accent-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 0.5rem;
+        font-family: "Space Grotesk", sans-serif;
       }
 
       /* Gallery Section */
       .gallery-section {
-        padding: 80px 0;
-        background: var(--light-color);
+        background: linear-gradient(
+          135deg,
+          rgba(10, 10, 10, 0.95),
+          rgba(15, 76, 117, 0.95)
+        );
       }
 
       .gallery-item {
-        border-radius: 15px;
+        border-radius: 20px;
         overflow: hidden;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        transition: all 0.3s ease;
-        margin-bottom: 2rem;
+        position: relative;
+        transition: all 0.5s ease;
+        cursor: pointer;
+        height: 300px;
       }
 
-      .gallery-item:hover {
-        transform: scale(1.05);
-        box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      .gallery-item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          45deg,
+          rgba(0, 245, 255, 0.3),
+          rgba(191, 0, 255, 0.3)
+        );
+        opacity: 0;
+        transition: all 0.3s ease;
+        z-index: 2;
+      }
+
+      .gallery-item:hover::before {
+        opacity: 1;
       }
 
       .gallery-item img {
         width: 100%;
-        height: 250px;
+        height: 100%;
         object-fit: cover;
-        transition: transform 0.3s ease;
+        transition: transform 0.5s ease;
+      }
+
+      .gallery-item:hover {
+        transform: scale(1.05) rotateY(5deg);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
       }
 
       .gallery-item:hover img {
-        transform: scale(1.1);
+        transform: scale(1.2);
       }
 
-      /* Floating Elements */
-      .floating-card {
-        animation: float 6s ease-in-out infinite;
+      /* Contact Section */
+      .contact-section {
+        background: linear-gradient(
+          135deg,
+          rgba(10, 10, 10, 0.95),
+          rgba(26, 26, 46, 0.95)
+        );
       }
 
-      @keyframes float {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-20px); }
-      }
-
-      /* Custom Buttons */
-      .btn-custom {
-        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-        border: none;
-        padding: 12px 30px;
-        border-radius: 50px;
-        color: white;
-        font-weight: 600;
+      .contact-card {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 2rem;
         transition: all 0.3s ease;
+        height: 100%;
       }
 
-      .btn-custom:hover {
-        background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
-        transform: translateY(-2px);
-        box-shadow: 0 10px 20px rgba(37,99,235,0.3);
-        color: white;
+      .contact-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 245, 255, 0.2);
+        border-color: rgba(0, 245, 255, 0.3);
       }
 
-      /* Navbar */
-      .navbar {
+      /* Form Styling */
+      .form-control,
+      .form-select {
+        background: rgba(255, 255, 255, 0.05) !important;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+        color: #ffffff !important;
+        border-radius: 15px !important;
+        padding: 15px 20px !important;
+        transition: all 0.3s ease !important;
         backdrop-filter: blur(10px);
-        background: rgba(31, 41, 55, 0.95) !important;
-        transition: all 0.3s ease;
       }
 
-      .navbar-brand {
-        font-weight: 700;
-        font-size: 1.5rem;
-        color: var(--accent-color) !important;
+      .form-control:focus,
+      .form-select:focus {
+        background: rgba(255, 255, 255, 0.1) !important;
+        border-color: var(--neon-blue) !important;
+        box-shadow: 0 0 20px rgba(0, 245, 255, 0.3) !important;
+        color: #ffffff !important;
+      }
+
+      .form-control::placeholder {
+        color: rgba(255, 255, 255, 0.6) !important;
+      }
+
+      /* Modal Enhancements */
+      .modal-content {
+        background: rgba(10, 10, 10, 0.95) !important;
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 25px;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+      }
+
+      .modal-header {
+        background: var(--primary-gradient);
+        border-radius: 25px 25px 0 0;
+        border: none;
+      }
+
+      .modal-body {
+        color: #ffffff !important;
       }
 
       /* Footer */
       footer {
-        background: linear-gradient(135deg, #181c2f 0%, #23243a 100%) !important;
-        color: #e5e7eb !important;
+        background: linear-gradient(135deg, #0a0a0a, #1a1a2e) !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        position: relative;
+      }
+
+      footer::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: var(--accent-gradient);
       }
 
       .social-links a {
-        display: inline-block;
         width: 50px;
         height: 50px;
-        background: #23243a !important;
-        color: #e5e7eb !important;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: 50%;
-        text-align: center;
-        line-height: 50px;
-        margin: 0 10px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
         transition: all 0.3s ease;
+        margin: 0 10px;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+      }
+
+      .social-links a i {
+        position: relative;
+        z-index: 2;
+        color: #ffffff;
+        transition: color 0.3s;
+      }
+
+      .social-links a::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--accent-gradient);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        border-radius: 50%;
+        z-index: 1;
+      }
+
+      .social-links a:hover::before {
+        opacity: 1;
       }
 
       .social-links a:hover {
-        background: #2563eb !important;
+        transform: translateY(-5px) scale(1.1);
+        box-shadow: 0 10px 20px rgba(0, 245, 255, 0.4);
+      }
+
+      .social-links a:hover i {
         color: #fff !important;
+        text-shadow: 0 0 8px #00f5ff, 0 0 16px #764ba2;
       }
 
-      /* Section Headings */
-      .section-title {
-        font-size: 2.5rem;
-        font-weight: 700;
-        color: var(--dark-color);
-        margin-bottom: 1rem;
+      /* Scroll Animations */
+      .fade-in-up {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all 0.6s ease;
       }
 
-      .section-subtitle {
+      .fade-in-up.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Loading Animation */
+      .loading-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #0a0a0a, #1a1a2e);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        opacity: 1;
+        transition: opacity 0.5s ease;
+      }
+
+      .loading-overlay.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .loader {
+        width: 80px;
+        height: 80px;
+        border: 3px solid rgba(255, 255, 255, 0.1);
+        border-top: 3px solid var(--neon-blue);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        box-shadow: 0 0 30px rgba(0, 245, 255, 0.5);
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Responsive Design */
+      @media (max-width: 1200px) {
+        .hero h1 {
+          font-size: 3rem;
+        }
+        .section {
+          padding: 60px 0;
+        }
+        .glow-card,
+        .featured-service-card {
+          padding: 1.5rem;
+        }
+        .service-icon {
+          width: 80px;
+          height: 80px;
+          font-size: 2rem;
+        }
+      }
+
+      @media (max-width: 992px) {
+        .hero h1 {
+          font-size: 2.2rem;
+        }
+        .hero .lead {
+          font-size: 1rem;
+        }
+        .section {
+          padding: 40px 0;
+        }
+        .glow-card,
+        .featured-service-card {
+          padding: 1rem;
+        }
+        .service-icon {
+          width: 60px;
+          height: 60px;
+          font-size: 1.5rem;
+        }
+        .gallery-item {
+          height: 200px;
+        }
+        .stat-number {
+          font-size: 1.5rem;
+        }
+        .navbar-brand {
+          font-size: 1.2rem;
+        }
+        .footer .row > div {
+          margin-bottom: 2rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero {
+          height: auto;
+          padding: 60px 0 30px 0;
+        }
+        .hero h1 {
+          font-size: 1.5rem;
+        }
+        .hero .lead {
+          font-size: 0.95rem;
+        }
+        .btn-neon,
+        .btn-gradient {
+          padding: 10px 18px;
+          font-size: 0.85rem;
+        }
+        .service-icon {
+          width: 40px;
+          height: 40px;
+          font-size: 1.1rem;
+        }
+        .gallery-item {
+          height: 120px;
+        }
+        .stat-number {
+          font-size: 1.1rem;
+        }
+        .glow-card,
+        .featured-service-card {
+          padding: 0.7rem;
+        }
+        .about-img img {
+          width: 100%;
+          height: auto;
+        }
+        .navbar-nav {
+          text-align: center;
+        }
+        .navbar-collapse {
+          background: rgba(10, 10, 10, 0.98);
+        }
+        .footer .row > div {
+          margin-bottom: 1rem;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .container-fluid,
+        .section,
+        .glow-card,
+        .featured-service-card,
+        .contact-card {
+          padding-left: 8px !important;
+          padding-right: 8px !important;
+        }
+        .hero h1 {
+          font-size: 1.1rem;
+        }
+        .hero .lead {
+          font-size: 0.8rem;
+        }
+        .btn-neon,
+        .btn-gradient {
+          padding: 8px 12px;
+          font-size: 0.75rem;
+        }
+        .service-icon {
+          width: 30px;
+          height: 30px;
+          font-size: 0.8rem;
+        }
+        .gallery-item {
+          height: 220px;
+          border-radius: 16px;
+          overflow: hidden;
+        }
+        .gallery-item img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+        }
+        .stat-number {
+          font-size: 0.9rem;
+        }
+        .footer .row {
+          flex-direction: column;
+        }
+        .footer .row > div {
+          width: 100%;
+          margin-bottom: 1rem;
+        }
+        .navbar-brand {
+          font-size: 1rem;
+        }
+        .navbar {
+          padding: 0.5rem 0;
+        }
+        .modal-dialog {
+          max-width: 95vw;
+          margin: 1rem auto;
+        }
+      }
+
+      @media (max-width: 400px) {
+        .hero h1,
+        .gradient-text,
+        h2.gradient-text,
+        h4.gradient-text,
+        h5.gradient-text,
+        h6.gradient-text {
+          font-size: 0.9rem !important;
+        }
+        .btn-neon,
+        .btn-gradient {
+          padding: 6px 8px;
+          font-size: 0.65rem;
+        }
+        .gallery-item {
+          height: 50px;
+        }
+        .stat-number {
+          font-size: 0.7rem;
+        }
+      }
+
+      /* Responsive utility classes for images and containers */
+      img,
+      iframe {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .ratio {
+        width: 100%;
+        min-height: 180px;
+      }
+
+      @media (max-width: 576px) {
+        .ratio {
+          min-height: 120px;
+        }
+      }
+
+      /* Responsive footer social links */
+      .social-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: flex-start;
+      }
+      .social-links a {
+        width: 40px;
+        height: 40px;
+        margin: 0 5px 5px 0;
         font-size: 1.2rem;
-        color: #6b7280;
-        margin-bottom: 3rem;
+      }
+      @media (max-width: 576px) {
+        .social-links a {
+          width: 32px;
+          height: 32px;
+          font-size: 1rem;
+        }
       }
 
-      /* Form Validation */
-      .form-control.is-invalid {
-        border-color: #dc3545;
-        box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+      /* Responsive modal content */
+      .modal-content {
+        padding: 1rem;
+      }
+      @media (max-width: 576px) {
+        .modal-content {
+          padding: 0.5rem;
+        }
       }
 
-      /* Custom Scrollbar */
+      /* Responsive form controls */
+      .form-control,
+      .form-select,
+      textarea {
+        font-size: 1rem;
+      }
+      @media (max-width: 576px) {
+        .form-control,
+        .form-select,
+        textarea {
+          font-size: 0.85rem;
+          padding: 8px 10px !important;
+        }
+      }
+
+      /* Responsive text alignment for sections */
+      @media (max-width: 768px) {
+        .text-center,
+        .text-md-end,
+        .text-md-start {
+          text-align: center !important;
+        }
+      }
+
+      /* Responsive grid for cards and gallery */
+      @media (max-width: 992px) {
+        .row.g-4 > [class*="col-"] {
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
+      }
+
+      /* Custom Styles */
+      /* Enhanced Scrollbar */
       ::-webkit-scrollbar {
         width: 8px;
       }
 
       ::-webkit-scrollbar-track {
-        background: #f1f1f1;
+        background: linear-gradient(180deg, #1a1a2e, #16213e);
       }
 
       ::-webkit-scrollbar-thumb {
-        background: var(--primary-color);
-        border-radius: 4px;
+        background: var(--primary-gradient);
+        border-radius: 10px;
       }
 
       ::-webkit-scrollbar-thumb:hover {
-        background: var(--secondary-color);
+        background: var(--accent-gradient);
       }
 
-      /* Responsive adjustments */
-      @media (max-width: 991.98px) {
-        .hero {
-          height: auto;
-          min-height: 60vh;
-          padding: 60px 0 40px 0;
+      /* Animated Background */
+      .animated-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: linear-gradient(45deg, #0a0a0a, #1a1a2e, #16213e, #0f4c75);
+        background-size: 400% 400%;
+        animation: gradientShift 15s ease infinite;
+      }
+
+      @keyframes gradientShift {
+        0% {
+          background-position: 0% 50%;
         }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      /* Floating Particles */
+      .floating-particles {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        pointer-events: none;
+      }
+
+      .particle {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background: var(--neon-blue);
+        border-radius: 50%;
+        animation: float 6s ease-in-out infinite;
+        box-shadow: 0 0 10px var(--neon-blue);
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-20px) rotate(180deg);
+        }
+      }
+
+      /* Enhanced Navbar */
+      .navbar {
+        background: rgba(10, 10, 10, 0.95) !important;
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      }
+
+      .navbar.scrolled {
+        background: rgba(10, 10, 10, 0.98) !important;
+        box-shadow: 0 8px 32px rgba(0, 245, 255, 0.2);
+      }
+
+      .navbar-brand {
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 700;
+        font-size: 1.8rem;
+        background: var(--accent-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: pulse 2s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+      }
+
+      .nav-link {
+        color: #ffffff !important;
+        font-weight: 500;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .nav-link::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: -100%;
+        width: 100%;
+        height: 2px;
+        background: var(--accent-gradient);
+        transition: left 0.3s ease;
+      }
+
+      .nav-link:hover::before {
+        left: 0;
+      }
+
+      .nav-link:hover {
+        color: var(--neon-blue) !important;
+        text-shadow: 0 0 10px var(--neon-blue);
+      }
+
+      /* Hero Section */
+      .hero {
+        height: 100vh;
+        background: linear-gradient(
+            135deg,
+            rgba(10, 10, 10, 0.8),
+            rgba(26, 26, 46, 0.8)
+          ),
+          url("https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2015&q=80")
+            center/cover no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(
+          circle at 50% 50%,
+          rgba(0, 245, 255, 0.1) 0%,
+          transparent 70%
+        );
+        animation: pulse-bg 4s ease-in-out infinite;
+      }
+
+      @keyframes pulse-bg {
+        0%,
+        100% {
+          opacity: 0.3;
+        }
+        50% {
+          opacity: 0.6;
+        }
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero h1 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 4.5rem;
+        font-weight: 900;
+        background: var(--accent-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 1.5rem;
+        text-shadow: 0 0 30px rgba(0, 245, 255, 0.5);
+        animation: slideInDown 1s ease-out;
+      }
+
+      @keyframes slideInDown {
+        from {
+          transform: translateY(-100px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      .hero .lead {
+        font-size: 1.5rem;
+        margin-bottom: 2.5rem;
+        background: linear-gradient(135deg, #ffffff, #b3b3b3);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: slideInUp 1s ease-out 0.3s both;
+      }
+
+      @keyframes slideInUp {
+        from {
+          transform: translateY(100px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      /* Enhanced Buttons */
+      .btn-neon {
+        background: transparent;
+        border: 2px solid var(--neon-blue);
+        color: var(--neon-blue) !important;
+        padding: 15px 40px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        border-radius: 50px;
+        box-shadow: 0 0 20px rgba(0, 245, 255, 0.3);
+        text-decoration: none !important;
+        z-index: 1;
+      }
+
+      .btn-neon::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(0, 245, 255, 0.2),
+          transparent
+        );
+        transition: left 0.5s;
+        z-index: -1;
+      }
+
+      .btn-neon:hover::before {
+        left: 100%;
+      }
+
+      .btn-neon:hover {
+        color: #ffffff !important;
+        background: rgba(0, 245, 255, 0.2) !important;
+        box-shadow: 0 0 30px rgba(0, 245, 255, 0.6);
+        transform: translateY(-3px);
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+      }
+
+      .btn-gradient {
+        background: var(--primary-gradient) !important;
+        border: none;
+        color: white !important;
+        padding: 15px 40px;
+        font-weight: 600;
+        border-radius: 50px;
+        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        text-decoration: none !important;
+        z-index: 1;
+      }
+
+      .btn-gradient::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--secondary-gradient);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: -1;
+      }
+
+      .btn-gradient:hover::before {
+        opacity: 1;
+      }
+
+      .btn-gradient:hover {
+        color: white !important;
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+      }
+
+      /* Glowing Cards */
+      .glow-card {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 2.5rem;
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .glow-card::before {
+        content: "";
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: var(--primary-gradient);
+        z-index: -1;
+        border-radius: 22px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .glow-card:hover::before {
+        opacity: 1;
+      }
+
+      .glow-card:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 20px 40px rgba(0, 245, 255, 0.3);
+      }
+
+      /* Service Icons with Animation */
+      .service-icon {
+        width: 100px;
+        height: 100px;
+        background: var(--accent-gradient);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.5rem;
+        color: white;
+        margin: 0 auto 2rem;
+        position: relative;
+        animation: rotate 10s linear infinite;
+        box-shadow: 0 0 30px rgba(0, 245, 255, 0.5);
+      }
+
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .service-icon::before {
+        content: "";
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        right: -5px;
+        bottom: -5px;
+        background: var(--primary-gradient);
+        border-radius: 50%;
+        z-index: -1;
+        animation: rotate 10s linear infinite reverse;
+      }
+
+      /* Floating Elements */
+      .float-animation {
+        animation: floating 6s ease-in-out infinite;
+      }
+
+      @keyframes floating {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      /* Gradient Text */
+      .gradient-text {
+        background: var(--accent-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 700;
+      }
+
+      /* Section Styling */
+      .section {
+        padding: 120px 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(
+            circle at 30% 40%,
+            rgba(102, 126, 234, 0.1) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 20%,
+            rgba(191, 0, 255, 0.1) 0%,
+            transparent 50%
+          );
+        pointer-events: none;
+      }
+
+      /* Services Section */
+      .services-section {
+        background: linear-gradient(
+          135deg,
+          rgba(10, 10, 10, 0.9),
+          rgba(26, 26, 46, 0.9)
+        );
+      }
+
+      .featured-service-card {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 25px;
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        cursor: pointer;
+        height: 100%;
+        position: relative;
+      }
+
+      .featured-service-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.1),
+          transparent
+        );
+        transition: left 0.6s;
+      }
+
+      .featured-service-card:hover::before {
+        left: 100%;
+      }
+
+      .featured-service-card:hover {
+        transform: translateY(-15px) rotateX(5deg);
+        box-shadow: 0 25px 50px rgba(0, 245, 255, 0.3);
+        border-color: rgba(0, 245, 255, 0.3);
+      }
+
+      .service-image {
+        height: 250px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .service-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+        filter: brightness(0.8);
+      }
+
+      .featured-service-card:hover .service-image img {
+        transform: scale(1.2) rotate(2deg);
+        filter: brightness(1);
+      }
+
+      .service-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(0, 245, 255, 0.8),
+          rgba(191, 0, 255, 0.8)
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: all 0.4s ease;
+      }
+
+      .featured-service-card:hover .service-overlay {
+        opacity: 1;
+      }
+
+      .service-content {
+        padding: 2rem;
+        position: relative;
+      }
+
+      .service-content h4 {
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        background: var(--accent-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      /* About Section */
+      .about-section {
+        background: linear-gradient(
+          135deg,
+          rgba(16, 33, 62, 0.9),
+          rgba(10, 10, 10, 0.9)
+        );
+      }
+
+      .about-img {
+        border-radius: 25px;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      }
+
+      .about-img::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          45deg,
+          rgba(0, 245, 255, 0.2),
+          rgba(191, 0, 255, 0.2)
+        );
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .about-img:hover::before {
+        opacity: 1;
+      }
+
+      /* Stats Cards */
+      .stat-card {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 2rem;
+        text-align: center;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .stat-card::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: conic-gradient(
+          from 0deg,
+          transparent,
+          rgba(0, 245, 255, 0.1),
+          transparent
+        );
+        animation: rotate 6s linear infinite;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .stat-card:hover::before {
+        opacity: 1;
+      }
+
+      .stat-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 245, 255, 0.2);
+      }
+
+      .stat-number {
+        font-size: 3rem;
+        font-weight: 900;
+        background: var(--accent-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 0.5rem;
+        font-family: "Space Grotesk", sans-serif;
+      }
+
+      /* Gallery Section */
+      .gallery-section {
+        background: linear-gradient(
+          135deg,
+          rgba(10, 10, 10, 0.95),
+          rgba(15, 76, 117, 0.95)
+        );
+      }
+
+      .gallery-item {
+        border-radius: 20px;
+        overflow: hidden;
+        position: relative;
+        transition: all 0.5s ease;
+        cursor: pointer;
+        height: 300px;
+      }
+
+      .gallery-item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          45deg,
+          rgba(0, 245, 255, 0.3),
+          rgba(191, 0, 255, 0.3)
+        );
+        opacity: 0;
+        transition: all 0.3s ease;
+        z-index: 2;
+      }
+
+      .gallery-item:hover::before {
+        opacity: 1;
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .gallery-item:hover {
+        transform: scale(1.05) rotateY(5deg);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.2);
+      }
+
+      /* Contact Section */
+      .contact-section {
+        background: linear-gradient(
+          135deg,
+          rgba(10, 10, 10, 0.95),
+          rgba(26, 26, 46, 0.95)
+        );
+      }
+
+      .contact-card {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 2rem;
+        transition: all 0.3s ease;
+        height: 100%;
+      }
+
+      .contact-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 245, 255, 0.2);
+        border-color: rgba(0, 245, 255, 0.3);
+      }
+
+      /* Form Styling */
+      .form-control,
+      .form-select {
+        background: rgba(255, 255, 255, 0.05) !important;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+        color: #ffffff !important;
+        border-radius: 15px !important;
+        padding: 15px 20px !important;
+        transition: all 0.3s ease !important;
+        backdrop-filter: blur(10px);
+      }
+
+      .form-control:focus,
+      .form-select:focus {
+        background: rgba(255, 255, 255, 0.1) !important;
+        border-color: var(--neon-blue) !important;
+        box-shadow: 0 0 20px rgba(0, 245, 255, 0.3) !important;
+        color: #ffffff !important;
+      }
+
+      .form-control::placeholder {
+        color: rgba(255, 255, 255, 0.6) !important;
+      }
+
+      /* Modal Enhancements */
+      .modal-content {
+        background: rgba(10, 10, 10, 0.95) !important;
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 25px;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+      }
+
+      .modal-header {
+        background: var(--primary-gradient);
+        border-radius: 25px 25px 0 0;
+        border: none;
+      }
+
+      .modal-body {
+        color: #ffffff !important;
+      }
+
+      /* Footer */
+      footer {
+        background: linear-gradient(135deg, #0a0a0a, #1a1a2e) !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        position: relative;
+      }
+
+      footer::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: var(--accent-gradient);
+      }
+
+      .social-links a {
+        width: 50px;
+        height: 50px;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        transition: all 0.3s ease;
+        margin: 0 10px;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+      }
+
+      .social-links a i {
+        position: relative;
+        z-index: 2;
+        color: #ffffff;
+        transition: color 0.3s;
+      }
+
+      .social-links a::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--accent-gradient);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        border-radius: 50%;
+        z-index: 1;
+      }
+
+      .social-links a:hover::before {
+        opacity: 1;
+      }
+
+      .social-links a:hover {
+        transform: translateY(-5px) scale(1.1);
+        box-shadow: 0 10px 20px rgba(0, 245, 255, 0.4);
+      }
+
+      .social-links a:hover i {
+        color: #fff !important;
+        text-shadow: 0 0 8px #00f5ff, 0 0 16px #764ba2;
+      }
+
+      /* Scroll Animations */
+      .fade-in-up {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all 0.6s ease;
+      }
+
+      .fade-in-up.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Loading Animation */
+      .loading-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #0a0a0a, #1a1a2e);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        opacity: 1;
+        transition: opacity 0.5s ease;
+      }
+
+      .loading-overlay.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .loader {
+        width: 80px;
+        height: 80px;
+        border: 3px solid rgba(255, 255, 255, 0.1);
+        border-top: 3px solid var(--neon-blue);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        box-shadow: 0 0 30px rgba(0, 245, 255, 0.5);
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Responsive Design */
+      @media (max-width: 1200px) {
+        .hero h1 {
+          font-size: 3rem;
+        }
+        .section {
+          padding: 60px 0;
+        }
+        .glow-card,
+        .featured-service-card {
+          padding: 1.5rem;
+        }
+        .service-icon {
+          width: 80px;
+          height: 80px;
+          font-size: 2rem;
+        }
+      }
+
+      @media (max-width: 992px) {
         .hero h1 {
           font-size: 2.2rem;
         }
-        .section-title {
-          font-size: 2rem;
+        .hero .lead {
+          font-size: 1rem;
         }
-        .gallery-item img {
-          width: 100%;
-          height: 250px;
-          object-fit: cover;
+        .section {
+          padding: 40px 0;
+        }
+        .glow-card,
+        .featured-service-card {
+          padding: 1rem;
+        }
+        .service-icon {
+          width: 60px;
+          height: 60px;
+          font-size: 1.5rem;
+        }
+        .gallery-item {
+          height: 200px;
+        }
+        .stat-number {
+          font-size: 1.5rem;
+        }
+        .navbar-brand {
+          font-size: 1.2rem;
+        }
+        .footer .row > div {
+          margin-bottom: 2rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero {
+          height: auto;
+          padding: 60px 0 30px 0;
+        }
+        .hero h1 {
+          font-size: 1.5rem;
+        }
+        .hero .lead {
+          font-size: 0.95rem;
+        }
+        .btn-neon,
+        .btn-gradient {
+          padding: 10px 18px;
+          font-size: 0.85rem;
+        }
+        .service-icon {
+          width: 40px;
+          height: 40px;
+          font-size: 1.1rem;
+        }
+        .gallery-item {
+          height: 120px;
+        }
+        .stat-number {
+          font-size: 1.1rem;
+        }
+        .glow-card,
+        .featured-service-card {
+          padding: 0.7rem;
         }
         .about-img img {
           width: 100%;
           height: auto;
         }
-        .service-card, .featured-service-card {
-          padding: 1.5rem;
+        .navbar-nav {
+          text-align: center;
         }
-        .service-content {
-          padding: 1rem;
+        .navbar-collapse {
+          background: rgba(10, 10, 10, 0.98);
         }
-        .contact-section, .gallery-section, .about-section, .services-section {
-          padding: 40px 0;
-        }
-        .contact-form {
-          padding: 2rem;
-        }
-        .story-section {
-          padding: 2rem 1rem;
-        }
-        .gallery-contact-section {
-          padding: 2rem 1rem;
+        .footer .row > div {
+          margin-bottom: 1rem;
         }
       }
-      @media (max-width: 767.98px) {
-        .hero {
-          padding: 40px 0 20px 0;
+
+      @media (max-width: 576px) {
+        .container-fluid,
+        .section,
+        .glow-card,
+        .featured-service-card,
+        .contact-card {
+          padding-left: 8px !important;
+          padding-right: 8px !important;
         }
-        .custom-shape-divider-bottom svg {
-          height: 60px;
-        }
-        .gallery-item img {
-          width: 100%;
-          height: 250px;
-          object-fit: cover;
-        }
-        .service-image {
-          height: 120px;
-        }
-        .service-content h4 {
-          font-size: 1.1rem;
-        }
-        .section-title {
-          font-size: 1.5rem;
-        }
-        .section-subtitle {
-          font-size: 1rem;
-        }
-        .contact-form {
-          padding: 1rem;
-        }
-        .story-section, .gallery-contact-section {
-          padding: 1rem 0.5rem;
-        }
-        .navbar-brand {
-          font-size: 1.1rem;
-        }
-        .social-links a {
-          width: 36px;
-          height: 36px;
-          line-height: 36px;
-          font-size: 1.1rem;
-        }
-        .about-img img {
-          border-radius: 10px;
-        }
-        .contact-card, .service-card, .featured-service-card {
-          padding: 1rem;
-        }
-        .card-body {
-          padding: 1rem;
-        }
-      }
-      @media (max-width: 575.98px) {
         .hero h1 {
-          font-size: 1.3rem;
-        }
-        .section-title {
           font-size: 1.1rem;
         }
-        .gallery-item img {
-          width: 100%;
-          height: 250px;
-          object-fit: cover;
+        .hero .lead {
+          font-size: 0.8rem;
         }
-        .service-image {
+        .btn-neon,
+        .btn-gradient {
+          padding: 8px 12px;
+          font-size: 0.75rem;
+        }
+        .service-icon {
+          width: 30px;
+          height: 30px;
+          font-size: 0.8rem;
+        }
+        .gallery-item {
           height: 80px;
         }
-        .service-content {
-          padding: 0.5rem;
+        .stat-number {
+          font-size: 0.9rem;
         }
-        .contact-form {
-          padding: 0.5rem;
+        .footer .row {
+          flex-direction: column;
         }
-        .story-section, .gallery-contact-section {
-          padding: 0.5rem 0.2rem;
+        .footer .row > div {
+          width: 100%;
+          margin-bottom: 1rem;
         }
         .navbar-brand {
-          font-size: 0.9rem;
+          font-size: 1rem;
         }
-        .social-links a {
-          width: 28px;
-          height: 28px;
-          line-height: 28px;
-          font-size: 0.9rem;
+        .navbar {
+          padding: 0.5rem 0;
+        }
+        .modal-dialog {
+          max-width: 95vw;
+          margin: 1rem auto;
         }
       }
 
-      /* Fix modal text visibility */
-      .modal-content,
-      .modal-header,
-      .modal-body,
-      .modal-footer {
-        background: #18181c !important;
-        color: #fff !important;
+      @media (max-width: 400px) {
+        .hero h1,
+        .gradient-text,
+        h2.gradient-text,
+        h4.gradient-text,
+        h5.gradient-text,
+        h6.gradient-text {
+          font-size: 0.9rem !important;
+        }
+        .btn-neon,
+        .btn-gradient {
+          padding: 6px 8px;
+          font-size: 0.65rem;
+        }
+        .gallery-item {
+          height: 50px;
+        }
+        .stat-number {
+          font-size: 0.7rem;
+        }
       }
-      .modal-title,
-      .modal-body h6,
-      .modal-body p,
-      .modal-body ul,
-      .modal-body li,
-      .modal-footer .btn {
-        color: #fff !important;
+
+      /* Responsive utility classes for images and containers */
+      img,
+      iframe {
+        max-width: 100%;
+        height: auto;
+        display: block;
       }
-      .modal-body ul.list-unstyled li {
+
+      .ratio {
+        width: 100%;
+        min-height: 180px;
+      }
+
+      @media (max-width: 576px) {
+        .ratio {
+          min-height: 120px;
+        }
+      }
+
+      /* Responsive footer social links */
+      .social-links {
         display: flex;
-        align-items: center;
-        font-size: 1rem;
-        margin-bottom: 0.75rem;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: flex-start;
       }
-      .modal-body ul.list-unstyled li i {
-        margin-right: 0.5rem;
-        color: #22c55e !important;
-        font-size: 1.2em;
+      .social-links a {
+        width: 40px;
+        height: 40px;
+        margin: 0 5px 5px 0;
+        font-size: 1.2rem;
       }
-
-      /* Enhance particles.js canvas to fully cover background */
-      #particles-js {
-        position: fixed !important;
-        top: 0; left: 0;
-        width: 100vw !important;
-        height: 100vh !important;
-        min-height: 100vh !important;
-        z-index: 0;
-        pointer-events: none;
+      @media (max-width: 576px) {
+        .social-links a {
+          width: 32px;
+          height: 32px;
+          font-size: 1rem;
+        }
       }
 
-      /* Make form placeholders visible */
-      .form-control::placeholder,
+      /* Responsive modal content */
+      .modal-content {
+        padding: 1rem;
+      }
+      @media (max-width: 576px) {
+        .modal-content {
+          padding: 0.5rem;
+        }
+      }
+
+      /* Responsive form controls */
+      .form-control,
       .form-select,
-      textarea.form-control::placeholder {
-        color: #b3b3b3 !important;
-        opacity: 1 !important;
-        font-weight: 500;
-        letter-spacing: 0.5px;
+      textarea {
+        font-size: 1rem;
       }
-      /* Make select placeholder visible */
-      .form-select option {
-        color: #101014 !important;
-        background: #fff !important;
+      @media (max-width: 576px) {
+        .form-control,
+        .form-select,
+        textarea {
+          font-size: 0.85rem;
+          padding: 8px 10px !important;
+        }
       }
-      /* Fix select text color for selected value */
-      .form-select {
-        color: #b3b3b3 !important;
+
+      /* Responsive text alignment for sections */
+      @media (max-width: 768px) {
+        .text-center,
+        .text-md-end,
+        .text-md-start {
+          text-align: center !important;
+        }
       }
-      .form-select:focus {
-        color: #fff !important;
+
+      /* Responsive grid for cards and gallery */
+      @media (max-width: 992px) {
+        .row.g-4 > [class*="col-"] {
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
       }
-      /* Particle.js canvas for home section */
-      #particles-home {
-        position: absolute;
-        top: 0; left: 0;
-        width: 100vw;
-        height: 100vh;
-        z-index: 0;
+
+      /* Custom Cursor */
+      .cursor {
+        width: 20px;
+        height: 20px;
+        background: var(--neon-blue);
+        border-radius: 50%;
+        position: fixed;
         pointer-events: none;
+        z-index: 9999;
+        mix-blend-mode: difference;
+        transition: transform 0.1s ease;
+      }
+
+      .cursor-follower {
+        width: 40px;
+        height: 40px;
+        border: 2px solid rgba(0, 245, 255, 0.5);
+        border-radius: 50%;
+        position: fixed;
+        pointer-events: none;
+        z-index: 9998;
+        transition: transform 0.15s ease;
+      }
+
+      /* Text Animation */
+      .typewriter {
+        overflow: hidden;
+        border-right: 3px solid var(--neon-blue);
+        white-space: nowrap;
+        margin: 0 auto;
+        animation: typing 3.5s steps(40, end),
+          blink-caret 0.75s step-end infinite;
+      }
+
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+
+      @keyframes blink-caret {
+        from,
+        to {
+          border-color: transparent;
+        }
+        50% {
+          border-color: var(--neon-blue);
+        }
       }
     </style>
   </head>
   <body>
-    <!-- Particle.js background -->
-    <div id="particles-js" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:0;"></div>
-    <!-- Particle.js for home section -->
-    <div id="particles-home"></div>
+    <!-- Loading Screen -->
+    <div class="loading-overlay" id="loading">
+      <div class="loader"></div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursor-follower"></div>
+
+    <!-- Animated Background -->
+    <div class="animated-bg"></div>
+
+    <!-- Floating Particles -->
+    <div class="floating-particles" id="particles"></div>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-lg" style="z-index:2;">
+    <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
       <div class="container-fluid">
-        <a
-          class="navbar-brand animate__animated animate__bounceIn"
-          href="#home"
-        >
-          <i class="bi bi-graph-up-arrow me-2"></i>RankMaster SEO
+        <a class="navbar-brand" href="#home">
+          <i class="bi bi-graph-up-arrow me-2"></i>Antodigitechs SEO
         </a>
         <button
           class="navbar-toggler"
@@ -821,12 +2440,12 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero" style="position:relative;z-index:1;">
+    <section id="home" class="hero">
       <div class="container-fluid">
         <div class="row justify-content-center">
-          <div class="col-12 col-md-10 col-lg-8 text-center">
+          <div class="col-12 col-md-10 col-lg-8 text-center hero-content">
             <h1 class="animate__animated animate__fadeInDown">
-              Welcome to RankMaster SEO
+              Welcome to Antodigitechs SEO
             </h1>
             <p
               class="lead animate__animated animate__fadeInUp animate__delay-1s"
@@ -834,50 +2453,29 @@
               <span id="typed-text"></span>
             </p>
             <div class="animate__animated animate__fadeInUp animate__delay-2s">
-              <a href="#services" class="btn btn-custom btn-lg me-3 hvr-grow"
-                >Our Services</a
+              <a href="#services" class="btn btn-neon btn-lg me-3"
+                >Explore Services</a
               >
-              <a href="#contact" class="btn btn-outline-light btn-lg hvr-grow"
-                >Get Quote</a
-              >
+              <a href="#contact" class="btn btn-gradient btn-lg">Get Started</a>
             </div>
           </div>
         </div>
-      </div>
-      <div class="custom-shape-divider-bottom">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M985.66,92.83c-55.59,4.75-111.19,9.51-167.39,14.09C764,111,709.41,115.43,654,115.3c-55.33-.13-110.66-4.7-165.91-9.27-55.25-4.57-110.5-9.13-165.83-9.26-55.44-.13-110.87,4.31-166.31,8.74-55.44,4.44-110.87,8.88-166.31,13.31V0H1200V27.35C1141.19,51.6,1066.78,88.08,985.66,92.83Z"
-            class="shape-fill"
-          ></path>
-        </svg>
       </div>
     </section>
 
     <!-- Service Modals -->
     <!-- Keyword Research Modal -->
-    <div
-      class="modal fade"
-      id="keywordResearchModal"
-      tabindex="-1"
-      aria-labelledby="keywordResearchModalLabel"
-      aria-hidden="true"
-    >
+    <div class="modal fade" id="keywordResearchModal" tabindex="-1">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="keywordResearchModalLabel">
+            <h5 class="modal-title">
               <i class="bi bi-search me-2"></i>Keyword Research & Strategy
             </h5>
             <button
               type="button"
-              class="btn-close"
+              class="btn-close btn-close-white"
               data-bs-dismiss="modal"
-              aria-label="Close"
             ></button>
           </div>
           <div class="modal-body">
@@ -890,7 +2488,7 @@
                 />
               </div>
               <div class="col-md-8">
-                <h6 class="text-primary mb-3">
+                <h6 class="gradient-text mb-3">
                   Comprehensive Keyword Analysis
                 </h6>
                 <p>
@@ -899,42 +2497,29 @@
                   identifying the words and phrases your target audience uses
                   when searching for products or services like yours.
                 </p>
-
-                <h6 class="text-primary mb-2">What We Do:</h6>
+                <h6 class="gradient-text mb-2">What We Do:</h6>
                 <ul class="list-unstyled">
                   <li class="mb-2">
-                    <i class="bi bi-check-circle text-success me-2"></i
-                    ><strong>Search Intent Analysis:</strong> Understanding what
-                    users really want when they search
+                    <i class="bi bi-check-circle text-success me-2"></i>
+                    <strong>Search Intent Analysis:</strong> Understanding what
+                    users really want
                   </li>
                   <li class="mb-2">
-                    <i class="bi bi-check-circle text-success me-2"></i
-                    ><strong>Competitor Research:</strong> Analyzing keywords
+                    <i class="bi bi-check-circle text-success me-2"></i>
+                    <strong>Competitor Research:</strong> Analyzing keywords
                     your competitors rank for
                   </li>
                   <li class="mb-2">
-                    <i class="bi bi-check-circle text-success me-2"></i
-                    ><strong>Long-tail Keywords:</strong> Finding specific, less
+                    <i class="bi bi-check-circle text-success me-2"></i>
+                    <strong>Long-tail Keywords:</strong> Finding specific, less
                     competitive phrases
                   </li>
                   <li class="mb-2">
-                    <i class="bi bi-check-circle text-success me-2"></i
-                    ><strong>Search Volume Analysis:</strong> Prioritizing
+                    <i class="bi bi-check-circle text-success me-2"></i>
+                    <strong>Search Volume Analysis:</strong> Prioritizing
                     keywords with optimal search volume
                   </li>
-                  <li class="mb-2">
-                    <i class="bi bi-check-circle text-success me-2"></i
-                    ><strong>Keyword Difficulty Assessment:</strong> Evaluating
-                    competition levels
-                  </li>
                 </ul>
-
-                <p>
-                  Our strategic approach ensures you target keywords that not
-                  only drive traffic but also convert visitors into customers,
-                  maximizing your ROI and establishing long-term online
-                  authority.
-                </p>
               </div>
             </div>
           </div>
@@ -948,7 +2533,7 @@
             </button>
             <button
               type="button"
-              class="btn btn-primary"
+              class="btn btn-gradient"
               onclick="window.location.href='#contact'"
             >
               Get Started
@@ -959,24 +2544,17 @@
     </div>
 
     <!-- Local SEO Modal -->
-    <div
-      class="modal fade"
-      id="localSeoModal"
-      tabindex="-1"
-      aria-labelledby="localSeoModalLabel"
-      aria-hidden="true"
-    >
+    <div class="modal fade" id="localSeoModal" tabindex="-1">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="localSeoModalLabel">
+            <h5 class="modal-title">
               <i class="bi bi-geo-alt me-2"></i>Local SEO Services
             </h5>
             <button
               type="button"
-              class="btn-close"
+              class="btn-close btn-close-white"
               data-bs-dismiss="modal"
-              aria-label="Close"
             ></button>
           </div>
           <div class="modal-body">
@@ -989,51 +2567,39 @@
                 />
               </div>
               <div class="col-md-8">
-                <h6 class="text-primary mb-3">Dominate Local Search Results</h6>
+                <h6 class="gradient-text mb-3">
+                  Dominate Local Search Results
+                </h6>
                 <p>
                   Local SEO is the process of optimizing your online presence to
                   attract nearby customers and improve visibility in local
-                  search results. It's essential for businesses with physical
-                  locations or those serving specific geographic areas.
+                  search results.
                 </p>
-
-                <h6 class="text-primary mb-2">
+                <h6 class="gradient-text mb-2">
                   Our Local SEO Services Include:
                 </h6>
                 <ul class="list-unstyled">
                   <li class="mb-2">
-                    <i class="bi bi-check-circle text-success me-2"></i
-                    ><strong>Google Business Profile Optimization:</strong>
+                    <i class="bi bi-check-circle text-success me-2"></i>
+                    <strong>Google Business Profile Optimization:</strong>
                     Complete setup and optimization
                   </li>
                   <li class="mb-2">
-                    <i class="bi bi-check-circle text-success me-2"></i
-                    ><strong>Local Citations:</strong> Building consistent NAP
+                    <i class="bi bi-check-circle text-success me-2"></i>
+                    <strong>Local Citations:</strong> Building consistent NAP
                     across directories
                   </li>
                   <li class="mb-2">
-                    <i class="bi bi-check-circle text-success me-2"></i
-                    ><strong>Review Management:</strong> Monitoring and
+                    <i class="bi bi-check-circle text-success me-2"></i>
+                    <strong>Review Management:</strong> Monitoring and
                     responding to customer reviews
                   </li>
                   <li class="mb-2">
-                    <i class="bi bi-check-circle text-success me-2"></i
-                    ><strong>Local Keyword Targeting:</strong> "Near me" and
-                    geo-specific terms
-                  </li>
-                  <li class="mb-2">
-                    <i class="bi bi-check-circle text-success me-2"></i
-                    ><strong>Local Link Building:</strong> Acquiring links from
-                    local businesses and organizations
+                    <i class="bi bi-check-circle text-success me-2"></i>
+                    <strong>Local Link Building:</strong> Acquiring links from
+                    local businesses
                   </li>
                 </ul>
-
-                <p>
-                  With over 84% of prospects requiring digital capabilities to
-                  facilitate brand transactions, our local SEO strategies help
-                  you capture high-intent local customers and drive foot traffic
-                  to your business.
-                </p>
               </div>
             </div>
           </div>
@@ -1047,7 +2613,7 @@
             </button>
             <button
               type="button"
-              class="btn btn-primary"
+              class="btn btn-gradient"
               onclick="window.location.href='#contact'"
             >
               Get Started
@@ -1058,24 +2624,17 @@
     </div>
 
     <!-- Content Optimization Modal -->
-    <div
-      class="modal fade"
-      id="contentOptimizationModal"
-      tabindex="-1"
-      aria-labelledby="contentOptimizationModalLabel"
-      aria-hidden="true"
-    >
+    <div class="modal fade" id="contentOptimizationModal" tabindex="-1">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="contentOptimizationModalLabel">
+            <h5 class="modal-title">
               <i class="bi bi-file-text me-2"></i>Content Optimization
             </h5>
             <button
               type="button"
-              class="btn-close"
+              class="btn-close btn-close-white"
               data-bs-dismiss="modal"
-              aria-label="Close"
             ></button>
           </div>
           <div class="modal-body">
@@ -1088,52 +2647,39 @@
                 />
               </div>
               <div class="col-md-8">
-                <h6 class="text-primary mb-3">
+                <h6 class="gradient-text mb-3">
                   Strategic Content That Converts
                 </h6>
                 <p>
                   Content optimization involves creating and refining website
                   content to improve search engine rankings while providing
-                  value to your audience. Our approach focuses on aligning
-                  content with user intent and search algorithms.
+                  value to your audience.
                 </p>
-
-                <h6 class="text-primary mb-2">
+                <h6 class="gradient-text mb-2">
                   Our Content Optimization Process:
                 </h6>
                 <ul class="list-unstyled">
                   <li class="mb-2">
-                    <i class="bi bi-check-circle text-success me-2"></i
-                    ><strong>Content Audit:</strong> Analyzing existing content
+                    <i class="bi bi-check-circle text-success me-2"></i>
+                    <strong>Content Audit:</strong> Analyzing existing content
                     for optimization opportunities
                   </li>
                   <li class="mb-2">
-                    <i class="bi bi-check-circle text-success me-2"></i
-                    ><strong>On-Page SEO:</strong> Optimizing titles, meta
+                    <i class="bi bi-check-circle text-success me-2"></i>
+                    <strong>On-Page SEO:</strong> Optimizing titles, meta
                     descriptions, and headers
                   </li>
                   <li class="mb-2">
-                    <i class="bi bi-check-circle text-success me-2"></i
-                    ><strong>User Intent Matching:</strong> Creating content
-                    that answers user queries
+                    <i class="bi bi-check-circle text-success me-2"></i>
+                    <strong>User Intent Matching:</strong> Creating content that
+                    answers user queries
                   </li>
                   <li class="mb-2">
-                    <i class="bi bi-check-circle text-success me-2"></i
-                    ><strong>Content Clusters:</strong> Building topic authority
-                    through interconnected content
-                  </li>
-                  <li class="mb-2">
-                    <i class="bi bi-check-circle text-success me-2"></i
-                    ><strong>Technical Optimization:</strong> Improving page
+                    <i class="bi bi-check-circle text-success me-2"></i>
+                    <strong>Technical Optimization:</strong> Improving page
                     speed and mobile experience
                   </li>
                 </ul>
-
-                <p>
-                  Our content strategies have helped clients achieve significant
-                  improvements in search rankings and user engagement, with some
-                  seeing over 100% increases in organic traffic.
-                </p>
               </div>
             </div>
           </div>
@@ -1147,7 +2693,7 @@
             </button>
             <button
               type="button"
-              class="btn btn-primary"
+              class="btn btn-gradient"
               onclick="window.location.href='#contact'"
             >
               Get Started
@@ -1158,24 +2704,17 @@
     </div>
 
     <!-- SEO Audit Modal -->
-    <div
-      class="modal fade"
-      id="seoAuditModal"
-      tabindex="-1"
-      aria-labelledby="seoAuditModalLabel"
-      aria-hidden="true"
-    >
+    <div class="modal fade" id="seoAuditModal" tabindex="-1">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="seoAuditModalLabel">
+            <h5 class="modal-title">
               <i class="bi bi-bar-chart me-2"></i>SEO Audits & Reporting
             </h5>
             <button
               type="button"
-              class="btn-close"
+              class="btn-close btn-close-white"
               data-bs-dismiss="modal"
-              aria-label="Close"
             ></button>
           </div>
           <div class="modal-body">
@@ -1188,51 +2727,37 @@
                 />
               </div>
               <div class="col-md-8">
-                <h6 class="text-primary mb-3">
+                <h6 class="gradient-text mb-3">
                   Comprehensive SEO Analysis & Reporting
                 </h6>
                 <p>
                   SEO audits are thorough assessments of your website's search
                   engine optimization performance. Our detailed audits identify
-                  opportunities for improvement and provide actionable
-                  recommendations to boost your rankings.
+                  opportunities for improvement.
                 </p>
-
-                <h6 class="text-primary mb-2">Our Audit Process Includes:</h6>
+                <h6 class="gradient-text mb-2">Our Audit Process Includes:</h6>
                 <ul class="list-unstyled">
                   <li class="mb-2">
-                    <i class="bi bi-check-circle text-success me-2"></i
-                    ><strong>Technical SEO Analysis:</strong> Site speed,
-                    crawlability, and indexation issues
+                    <i class="bi bi-check-circle text-success me-2"></i>
+                    <strong>Technical SEO Analysis:</strong> Site speed,
+                    crawlability, and indexation
                   </li>
                   <li class="mb-2">
-                    <i class="bi bi-check-circle text-success me-2"></i
-                    ><strong>On-Page Optimization Review:</strong> Content,
-                    keywords, and meta data analysis
+                    <i class="bi bi-check-circle text-success me-2"></i>
+                    <strong>On-Page Optimization Review:</strong> Content,
+                    keywords, and meta data
                   </li>
                   <li class="mb-2">
-                    <i class="bi bi-check-circle text-success me-2"></i
-                    ><strong>Backlink Profile Assessment:</strong> Link quality
+                    <i class="bi bi-check-circle text-success me-2"></i>
+                    <strong>Backlink Profile Assessment:</strong> Link quality
                     and authority evaluation
                   </li>
                   <li class="mb-2">
-                    <i class="bi bi-check-circle text-success me-2"></i
-                    ><strong>Competitor Analysis:</strong> Benchmarking against
-                    top competitors
-                  </li>
-                  <li class="mb-2">
-                    <i class="bi bi-check-circle text-success me-2"></i
-                    ><strong>Monthly Performance Reports:</strong> Traffic,
+                    <i class="bi bi-check-circle text-success me-2"></i>
+                    <strong>Monthly Performance Reports:</strong> Traffic,
                     rankings, and ROI tracking
                   </li>
                 </ul>
-
-                <p>
-                  Our comprehensive reporting includes actionable insights and
-                  clear recommendations, helping you understand your SEO
-                  performance and make data-driven decisions for sustainable
-                  growth.
-                </p>
               </div>
             </div>
           </div>
@@ -1246,7 +2771,7 @@
             </button>
             <button
               type="button"
-              class="btn btn-primary"
+              class="btn btn-gradient"
               onclick="window.location.href='#contact'"
             >
               Get Started
@@ -1257,27 +2782,36 @@
     </div>
 
     <!-- Services Section -->
-    <section id="services" class="services-section">
+    <section id="services" class="section services-section">
       <div class="container-fluid">
         <div class="row">
           <div class="col-12 text-center mb-5">
-            <h2 class="section-title" data-aos="fade-up">Our SEO Services</h2>
-            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+            <h2
+              class="gradient-text"
+              data-aos="fade-up"
+              style="
+                font-size: 3.5rem;
+                font-family: 'Space Grotesk', sans-serif;
+              "
+            >
+              Our SEO Services
+            </h2>
+            <p class="lead" data-aos="fade-up" data-aos-delay="100">
               Comprehensive digital marketing solutions to boost your online
               presence
             </p>
           </div>
         </div>
 
-        <!-- Featured Services with Detailed Cards -->
+        <!-- Featured Services -->
         <div class="row g-4 mb-5">
           <div
             class="col-lg-6 col-md-6"
-            data-aos="fade-up"
+            data-aos="zoom-in"
             data-aos-delay="100"
           >
             <div
-              class="featured-service-card"
+              class="featured-service-card float-animation"
               data-bs-toggle="modal"
               data-bs-target="#keywordResearchModal"
             >
@@ -1285,21 +2819,20 @@
                 <img
                   src="https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
                   alt="Keyword Research"
-                  class="img-fluid"
                 />
                 <div class="service-overlay">
-                  <div class="service-icon-featured">
+                  <div class="service-icon">
                     <i class="bi bi-search"></i>
                   </div>
                 </div>
               </div>
               <div class="service-content">
                 <h4>Keyword Research & Strategy</h4>
-                <p class="text-muted">
+                <p>
                   Comprehensive keyword analysis to identify high-value search
                   terms and create targeted content strategies.
                 </p>
-                <span class="read-more"
+                <span class="gradient-text"
                   >Click to learn more <i class="bi bi-arrow-right"></i
                 ></span>
               </div>
@@ -1308,33 +2841,33 @@
 
           <div
             class="col-lg-6 col-md-6"
-            data-aos="fade-up"
+            data-aos="zoom-in"
             data-aos-delay="200"
           >
             <div
-              class="featured-service-card"
+              class="featured-service-card float-animation"
               data-bs-toggle="modal"
               data-bs-target="#localSeoModal"
+              style="animation-delay: 1s"
             >
               <div class="service-image">
                 <img
                   src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
                   alt="Local SEO"
-                  class="img-fluid"
                 />
                 <div class="service-overlay">
-                  <div class="service-icon-featured">
+                  <div class="service-icon">
                     <i class="bi bi-geo-alt"></i>
                   </div>
                 </div>
               </div>
               <div class="service-content">
                 <h4>Local SEO Services</h4>
-                <p class="text-muted">
+                <p>
                   Optimize your business for local search results and attract
                   customers in your geographical area.
                 </p>
-                <span class="read-more"
+                <span class="gradient-text"
                   >Click to learn more <i class="bi bi-arrow-right"></i
                 ></span>
               </div>
@@ -1343,33 +2876,33 @@
 
           <div
             class="col-lg-6 col-md-6"
-            data-aos="fade-up"
+            data-aos="zoom-in"
             data-aos-delay="300"
           >
             <div
-              class="featured-service-card"
+              class="featured-service-card float-animation"
               data-bs-toggle="modal"
               data-bs-target="#contentOptimizationModal"
+              style="animation-delay: 2s"
             >
               <div class="service-image">
                 <img
                   src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
                   alt="Content Optimization"
-                  class="img-fluid"
                 />
                 <div class="service-overlay">
-                  <div class="service-icon-featured">
+                  <div class="service-icon">
                     <i class="bi bi-file-text"></i>
                   </div>
                 </div>
               </div>
               <div class="service-content">
                 <h4>Content Optimization</h4>
-                <p class="text-muted">
+                <p>
                   High-quality, SEO-optimized content creation that engages your
                   audience and establishes authority.
                 </p>
-                <span class="read-more"
+                <span class="gradient-text"
                   >Click to learn more <i class="bi bi-arrow-right"></i
                 ></span>
               </div>
@@ -1378,33 +2911,33 @@
 
           <div
             class="col-lg-6 col-md-6"
-            data-aos="fade-up"
+            data-aos="zoom-in"
             data-aos-delay="400"
           >
             <div
-              class="featured-service-card"
+              class="featured-service-card float-animation"
               data-bs-toggle="modal"
               data-bs-target="#seoAuditModal"
+              style="animation-delay: 3s"
             >
               <div class="service-image">
                 <img
                   src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
                   alt="SEO Audit"
-                  class="img-fluid"
                 />
                 <div class="service-overlay">
-                  <div class="service-icon-featured">
+                  <div class="service-icon">
                     <i class="bi bi-bar-chart"></i>
                   </div>
                 </div>
               </div>
               <div class="service-content">
                 <h4>SEO Audits & Reporting</h4>
-                <p class="text-muted">
+                <p>
                   Comprehensive tracking and detailed reports showing your SEO
                   progress and ROI metrics.
                 </p>
-                <span class="read-more"
+                <span class="gradient-text"
                   >Click to learn more <i class="bi bi-arrow-right"></i
                 ></span>
               </div>
@@ -1416,15 +2949,18 @@
         <div class="row g-4 mb-5">
           <div
             class="col-lg-4 col-md-6"
-            data-aos="fade-up"
+            data-aos="flip-left"
             data-aos-delay="500"
           >
-            <div class="service-card floating-card">
+            <div
+              class="glow-card float-animation"
+              style="animation-delay: 0.5s"
+            >
               <div class="service-icon">
                 <i class="bi bi-gear"></i>
               </div>
-              <h4 class="mb-3">Technical SEO Optimization</h4>
-              <p class="text-muted">
+              <h4 class="gradient-text mb-3">Technical SEO Optimization</h4>
+              <p>
                 Complete technical audit and optimization of your website's
                 performance, including site speed, mobile responsiveness, and
                 search engine crawlability.
@@ -1448,15 +2984,18 @@
 
           <div
             class="col-lg-4 col-md-6"
-            data-aos="fade-up"
+            data-aos="flip-left"
             data-aos-delay="600"
           >
-            <div class="service-card floating-card">
+            <div
+              class="glow-card float-animation"
+              style="animation-delay: 1.5s"
+            >
               <div class="service-icon">
                 <i class="bi bi-link-45deg"></i>
               </div>
-              <h4 class="mb-3">Link Building & Authority</h4>
-              <p class="text-muted">
+              <h4 class="gradient-text mb-3">Link Building & Authority</h4>
+              <p>
                 Strategic link building campaigns to increase your website's
                 domain authority and improve search engine rankings through
                 quality backlinks.
@@ -1477,37 +3016,79 @@
               </ul>
             </div>
           </div>
+
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="flip-left"
+            data-aos-delay="700"
+          >
+            <div
+              class="glow-card float-animation"
+              style="animation-delay: 2.5s"
+            >
+              <div class="service-icon">
+                <i class="bi bi-graph-up"></i>
+              </div>
+              <h4 class="gradient-text mb-3">Analytics & Performance</h4>
+              <p>
+                Advanced analytics setup and performance monitoring to track
+                your SEO success and make data-driven decisions for continuous
+                improvement.
+              </p>
+              <ul class="list-unstyled mt-3">
+                <li>
+                  <i class="bi bi-check-circle text-success me-2"></i>Google
+                  Analytics Setup
+                </li>
+                <li>
+                  <i class="bi bi-check-circle text-success me-2"></i
+                  >Performance Monitoring
+                </li>
+                <li>
+                  <i class="bi bi-check-circle text-success me-2"></i>ROI
+                  Tracking
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
 
-        <!-- Contact Information in Services -->
+        <!-- CTA Section -->
         <div class="row">
           <div class="col-12" data-aos="fade-up">
-            <div
-              class="services-contact-section bg-primary text-white rounded-4 p-4"
-            >
-              <div class="row align-items-center">
-                <div class="col-lg-8">
-                  <h4 class="mb-2">Ready to boost your online presence?</h4>
-                  <p class="mb-0">
-                    Get in touch with our SEO experts today for a free
-                    consultation
-                  </p>
-                </div>
-                <div class="col-lg-4 text-lg-end">
-                  <div class="contact-info-compact">
-                    <div class="mb-2">
-                      <i class="bi bi-telephone me-2"></i>
-                      <strong>+91 9080654251</strong>
-                    </div>
-                    <div class="mb-2">
-                      <i class="bi bi-envelope me-2"></i>
-                      <strong>godwin@gmail.com</strong>
-                    </div>
-                    <div>
-                      <i class="bi bi-geo-alt me-2"></i>
-                      <strong>Tiruchirappalli, Tamil Nadu</strong>
-                    </div>
+            <div class="glow-card text-center">
+              <h4 class="gradient-text mb-3">
+                Ready to boost your online presence?
+              </h4>
+              <p class="mb-4">
+                Get in touch with our SEO experts today for a free consultation
+              </p>
+              <div class="row g-3 align-items-center justify-content-center">
+                <div class="col-md-6">
+                  <div
+                    class="d-flex align-items-center justify-content-center mb-2"
+                  >
+                    <i class="bi bi-telephone text-info me-2"></i>
+                    <strong>+91 7448956396</strong>
                   </div>
+                  <div
+                    class="d-flex align-items-center justify-content-center mb-2"
+                  >
+                    <i class="bi bi-envelope text-info me-2"></i>
+                    <strong>antodigitechs@gmail.com</strong>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-center">
+                    <i class="bi bi-geo-alt text-info me-2"></i>
+                    <strong
+                      >No.4/108, Pugazh Complex 8th Street, Gandhi Nagar Kattur,
+                      Trichy 620019.</strong
+                    >
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <a href="#contact" class="btn btn-gradient btn-lg"
+                    >Get Free Quote</a
+                  >
                 </div>
               </div>
             </div>
@@ -1517,7 +3098,7 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about-section">
+    <section id="about" class="section about-section">
       <div class="container-fluid">
         <div class="row align-items-center mb-5">
           <div class="col-12 col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
@@ -1530,66 +3111,57 @@
             </div>
           </div>
           <div class="col-12 col-lg-6" data-aos="fade-left">
-            <h2 class="section-title">About RankMaster SEO</h2>
-            <p class="section-subtitle">
-              Your trusted partner in digital growth
-            </p>
+            <h2
+              class="gradient-text"
+              style="font-size: 3rem; font-family: 'Space Grotesk', sans-serif"
+            >
+              About Antodigitechs SEO
+            </h2>
+            <p class="lead mb-4">Your trusted partner in digital growth</p>
             <p class="mb-4">
               With over 5 years of experience in the digital marketing industry,
-              RankMaster SEO has helped hundreds of businesses achieve their
+              Antodigitechs SEO has helped hundreds of businesses achieve their
               online goals. Our team of certified SEO experts uses proven
               strategies and cutting-edge techniques to deliver measurable
               results.
             </p>
             <div class="row g-3 mb-4">
               <div class="col-6">
-                <div class="d-flex align-items-center">
-                  <i class="bi bi-award text-primary fs-3 me-3"></i>
-                  <div>
-                    <h5 class="mb-0">500+</h5>
-                    <small class="text-muted">Projects Completed</small>
-                  </div>
+                <div class="stat-card">
+                  <div class="stat-number" data-count="500">0</div>
+                  <small>Projects Completed</small>
                 </div>
               </div>
               <div class="col-6">
-                <div class="d-flex align-items-center">
-                  <i class="bi bi-people text-primary fs-3 me-3"></i>
-                  <div>
-                    <h5 class="mb-0">300+</h5>
-                    <small class="text-muted">Happy Clients</small>
-                  </div>
+                <div class="stat-card">
+                  <div class="stat-number" data-count="300">0</div>
+                  <small>Happy Clients</small>
                 </div>
               </div>
               <div class="col-6">
-                <div class="d-flex align-items-center">
-                  <i class="bi bi-graph-up text-primary fs-3 me-3"></i>
-                  <div>
-                    <h5 class="mb-0">150%</h5>
-                    <small class="text-muted">Average Traffic Increase</small>
-                  </div>
+                <div class="stat-card">
+                  <div class="stat-number" data-count="150">0</div>
+                  <small>Avg Traffic Increase %</small>
                 </div>
               </div>
               <div class="col-6">
-                <div class="d-flex align-items-center">
-                  <i class="bi bi-star text-primary fs-3 me-3"></i>
-                  <div>
-                    <h5 class="mb-0">4.9/5</h5>
-                    <small class="text-muted">Client Satisfaction</small>
-                  </div>
+                <div class="stat-card">
+                  <div class="stat-number" data-count="4.9">0</div>
+                  <small>Client Satisfaction</small>
                 </div>
               </div>
             </div>
-            <a href="#contact" class="btn btn-custom btn-lg hvr-grow"
+            <a href="#contact" class="btn btn-gradient btn-lg"
               >Start Your SEO Journey</a
             >
           </div>
         </div>
 
-        <!-- Our Story Section -->
+        <!-- Story Section -->
         <div class="row">
           <div class="col-12" data-aos="fade-up">
-            <div class="story-section bg-light rounded-4 p-5">
-              <h3 class="mb-4 text-center">Our Story</h3>
+            <div class="glow-card">
+              <h3 class="gradient-text mb-4 text-center">Our Story</h3>
               <p class="lead text-center mb-4">
                 Founded with a vision to help businesses dominate the digital
                 landscape through strategic SEO services
@@ -1597,69 +3169,33 @@
               <div class="row">
                 <div class="col-lg-8 mx-auto">
                   <p class="mb-4">
-                    RankMaster SEO was born from the understanding that in
+                    Antodigitechs SEO was born from the understanding that in
                     today's digital-first world, businesses need more than just
                     a website – they need visibility, authority, and a strategic
-                    approach to search engine optimization. Our journey began
-                    when we witnessed countless businesses struggling to get
-                    noticed online despite offering exceptional products and
-                    services.
+                    approach to search engine optimization.
                   </p>
-
                   <p class="mb-4">
                     We recognized that effective SEO is not just about ranking
                     higher in search results; it's about connecting businesses
                     with their ideal customers at the exact moment they're
-                    searching for solutions. This insight led us to develop
-                    comprehensive SEO strategies that focus on understanding
-                    search intent, creating valuable content, and building
-                    long-term digital authority.
+                    searching for solutions.
                   </p>
-
-                  <p class="mb-4">
-                    Our approach combines technical expertise with creative
-                    content strategies, ensuring that every client receives a
-                    tailored solution that drives measurable results. From
-                    keyword research and on-page optimization to link building
-                    and local SEO, we've helped businesses across various
-                    industries achieve their digital marketing goals and
-                    establish a strong online presence that generates consistent
-                    leads and revenue.
-                  </p>
-
-                  <div class="contact-info-story mt-5">
-                    <div class="row g-4">
-                      <div class="col-md-6">
-                        <div class="d-flex align-items-center">
-                          <i class="bi bi-telephone text-primary fs-4 me-3"></i>
-                          <div>
-                            <h6 class="mb-0">Call Us</h6>
-                            <span class="text-muted">+91 9080654251</span>
-                          </div>
+                  <div class="row g-4 mt-4">
+                    <div class="col-md-6">
+                      <div class="d-flex align-items-center">
+                        <i class="bi bi-telephone gradient-text fs-4 me-3"></i>
+                        <div>
+                          <h6 class="mb-0">Call Us</h6>
+                          <span>+91 7448956396</span>
                         </div>
                       </div>
-                      <div class="col-md-6">
-                        <div class="d-flex align-items-center">
-                          <i class="bi bi-envelope text-primary fs-4 me-3"></i>
-                          <div>
-                            <h6 class="mb-0">Email</h6>
-                            <span class="text-muted">godwin@gmail.com</span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-12">
-                        <div class="d-flex align-items-start">
-                          <i
-                            class="bi bi-geo-alt text-primary fs-4 me-3 mt-1"
-                          ></i>
-                          <div>
-                            <h6 class="mb-2">Visit Our Office</h6>
-                            <p class="text-muted mb-0">
-                              No 4/63 A, 5th Cross Street, Bhelpur Koothappar<br />
-                              Thiruverumbur (tp), PO: Thiruverumbur<br />
-                              DIST: Tiruchirappalli, Tamil Nadu - 620013
-                            </p>
-                          </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="d-flex align-items-center">
+                        <i class="bi bi-envelope gradient-text fs-4 me-3"></i>
+                        <div>
+                          <h6 class="mb-0">Email</h6>
+                          <span>antodigitechs@gmail.com</span>
                         </div>
                       </div>
                     </div>
@@ -1673,18 +3209,26 @@
     </section>
 
     <!-- Gallery Section -->
-    <section id="gallery" class="gallery-section">
+    <section id="gallery" class="section gallery-section">
       <div class="container-fluid">
         <div class="row">
           <div class="col-12 text-center mb-5">
-            <h2 class="section-title" data-aos="fade-up">Our Work Gallery</h2>
-            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+            <h2
+              class="gradient-text"
+              data-aos="fade-up"
+              style="
+                font-size: 3.5rem;
+                font-family: 'Space Grotesk', sans-serif;
+              "
+            >
+              Our Work Gallery
+            </h2>
+            <p class="lead" data-aos="fade-up" data-aos-delay="100">
               Visual showcase of our company and achievements
             </p>
           </div>
         </div>
 
-        <!-- Office Images -->
         <div class="row g-4 mb-5">
           <div
             class="col-lg-4 col-md-6"
@@ -1694,13 +3238,11 @@
             <div class="gallery-item">
               <img
                 src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                alt="RankMaster SEO Office - Main Workspace"
+                alt="Antodigitechs SEO Office"
               />
               <div class="p-3">
-                <h5>Our Main Office</h5>
-                <p class="text-muted mb-0">
-                  RankMaster SEO headquarters in Tiruchirappalli
-                </p>
+                <h5 class="gradient-text">Our Main Office</h5>
+                <p>Antodigitechs SEO headquarters in Tiruchirappalli</p>
               </div>
             </div>
           </div>
@@ -1713,13 +3255,11 @@
             <div class="gallery-item">
               <img
                 src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                alt="RankMaster SEO Conference Room"
+                alt="Conference Room"
               />
               <div class="p-3">
-                <h5>Conference Room</h5>
-                <p class="text-muted mb-0">
-                  Where we plan winning SEO strategies
-                </p>
+                <h5 class="gradient-text">Conference Room</h5>
+                <p>Where we plan winning SEO strategies</p>
               </div>
             </div>
           </div>
@@ -1732,13 +3272,11 @@
             <div class="gallery-item">
               <img
                 src="https://images.unsplash.com/photo-1586880244406-556ebe35f282?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                alt="RankMaster SEO Reception Area"
+                alt="Reception Area"
               />
               <div class="p-3">
-                <h5>Reception Area</h5>
-                <p class="text-muted mb-0">
-                  Welcome area for our valued clients
-                </p>
+                <h5 class="gradient-text">Reception Area</h5>
+                <p>Welcome area for our valued clients</p>
               </div>
             </div>
           </div>
@@ -1751,11 +3289,11 @@
             <div class="gallery-item">
               <img
                 src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                alt="RankMaster SEO Work Stations"
+                alt="Work Stations"
               />
               <div class="p-3">
-                <h5>Creative Workstations</h5>
-                <p class="text-muted mb-0">Where SEO magic happens daily</p>
+                <h5 class="gradient-text">Creative Workstations</h5>
+                <p>Where SEO magic happens daily</p>
               </div>
             </div>
           </div>
@@ -1768,13 +3306,11 @@
             <div class="gallery-item">
               <img
                 src="https://images.unsplash.com/photo-1552581234-26160f608093?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                alt="RankMaster SEO Team Meeting"
+                alt="Team Meeting"
               />
               <div class="p-3">
-                <h5>Team Collaboration</h5>
-                <p class="text-muted mb-0">
-                  Daily strategy and planning sessions
-                </p>
+                <h5 class="gradient-text">Team Collaboration</h5>
+                <p>Daily strategy and planning sessions</p>
               </div>
             </div>
           </div>
@@ -1782,29 +3318,7 @@
           <div
             class="col-lg-4 col-md-6"
             data-aos="zoom-in"
-            data-aos-delay="500"
-          >
-            <div class="gallery-item">
-              <img
-                src="https://images.unsplash.com/photo-1552581234-26160f608093?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                alt="RankMaster SEO Team Meeting"
-              />
-              <div class="p-3">
-                <h5>Break Area</h5>
-                <p class="text-muted mb-0">
-                  Relaxation space for creative thinking
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Previous Gallery Items -->
-        <div class="row g-4 mb-5">
-          <div
-            class="col-lg-4 col-md-6"
-            data-aos="zoom-in"
-            data-aos-delay="700"
+            data-aos-delay="600"
           >
             <div class="gallery-item">
               <img
@@ -1812,128 +3326,81 @@
                 alt="Analytics Dashboard"
               />
               <div class="p-3">
-                <h5>Analytics & Reports</h5>
-                <p class="text-muted mb-0">Data-driven results tracking</p>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="col-lg-4 col-md-6"
-            data-aos="zoom-in"
-            data-aos-delay="800"
-          >
-            <div class="gallery-item">
-              <img
-                src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                alt="Client Success"
-              />
-              <div class="p-3">
-                <h5>Client Success Stories</h5>
-                <p class="text-muted mb-0">Celebrating achievements together</p>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="col-lg-4 col-md-6"
-            data-aos="zoom-in"
-            data-aos-delay="900"
-          >
-            <div class="gallery-item">
-              <img
-                src="https://images.unsplash.com/photo-1553484771-371a605b060b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                alt="Digital Marketing"
-              />
-              <div class="p-3">
-                <h5>Digital Innovation</h5>
-                <p class="text-muted mb-0">Cutting-edge marketing solutions</p>
+                <h5 class="gradient-text">Analytics & Reports</h5>
+                <p>Data-driven results tracking</p>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Gallery Contact Information -->
+        <!-- Contact Information -->
         <div class="row">
           <div class="col-12" data-aos="fade-up">
-            <div class="gallery-contact-section bg-white rounded-4 p-5 shadow">
+            <div class="glow-card">
               <div class="row">
                 <div class="col-lg-6">
-                  <h4 class="mb-4">Visit Our Office</h4>
-                  <p class="text-muted mb-4">
+                  <h4 class="gradient-text mb-4">Visit Our Office</h4>
+                  <p class="mb-4">
                     We'd love to meet you in person! Schedule a visit to our
                     office and see where the SEO magic happens.
                   </p>
-
-                  <div class="contact-details">
-                    <div class="contact-item mb-3">
-                      <div class="d-flex align-items-start">
-                        <i
-                          class="bi bi-geo-alt-fill text-primary fs-4 me-3 mt-1"
-                        ></i>
-                        <div>
-                          <h6 class="mb-1">Office Address</h6>
-                          <p class="text-muted mb-0">
-                            No 4/63 A, 5th Cross Street<br />
-                            Bhelpur Koothappar, Thiruverumbur (tp)<br />
-                            PO: Thiruverumbur, DIST: Tiruchirappalli<br />
-                            Tamil Nadu - 620013
-                          </p>
-                        </div>
+                  <div class="mb-3">
+                    <div class="d-flex align-items-start">
+                      <i
+                        class="bi bi-geo-alt-fill gradient-text fs-4 me-3 mt-1"
+                      ></i>
+                      <div>
+                        <h6 class="mb-1">Office Address</h6>
+                        <p class="mb-0">
+                          No.4/108, Pugazh Complex<br />
+                          8th Street, Gandhi Nagar<br />
+                          Kattur, Trichy 620019.
+                        </p>
                       </div>
                     </div>
-
-                    <div class="contact-item mb-3">
-                      <div class="d-flex align-items-center">
-                        <i
-                          class="bi bi-telephone-fill text-primary fs-4 me-3"
-                        ></i>
-                        <div>
-                          <h6 class="mb-1">Phone Number</h6>
-                          <p class="text-muted mb-0">+91 9080654251</p>
-                        </div>
+                  </div>
+                  <div class="mb-3">
+                    <div class="d-flex align-items-center">
+                      <i
+                        class="bi bi-telephone-fill gradient-text fs-4 me-3"
+                      ></i>
+                      <div>
+                        <h6 class="mb-1">Phone Number</h6>
+                        <p class="mb-0">+91 7448956396</p>
                       </div>
                     </div>
-
-                    <div class="contact-item mb-3">
-                      <div class="d-flex align-items-center">
-                        <i
-                          class="bi bi-envelope-fill text-primary fs-4 me-3"
-                        ></i>
-                        <div>
-                          <h6 class="mb-1">Email Address</h6>
-                          <p class="text-muted mb-0">godwin@gmail.com</p>
-                        </div>
+                  </div>
+                  <div class="mb-3">
+                    <div class="d-flex align-items-center">
+                      <i
+                        class="bi bi-envelope-fill gradient-text fs-4 me-3"
+                      ></i>
+                      <div>
+                        <h6 class="mb-1">Email Address</h6>
+                        <p class="mb-0">antodigitechs@gmail.com</p>
                       </div>
                     </div>
                   </div>
                 </div>
-
                 <div class="col-lg-6">
-                  <h4 class="mb-4">Office Hours</h4>
-                  <div class="office-hours">
-                    <div class="hours-item d-flex justify-content-between mb-2">
-                      <span><strong>Monday - Saturday:</strong></span>
-                      <span class="text-primary">9:00 AM - 7:00 PM</span>
-                    </div>
-                    <div class="hours-item d-flex justify-content-between mb-4">
-                      <span><strong>Sunday:</strong></span>
-                      <span class="text-muted">Closed</span>
-                    </div>
-
-                    <div class="mt-4">
-                      <div class="d-flex flex-column flex-sm-row gap-3 justify-content-start align-items-stretch">
-                        <a href="#contact" class="btn btn-primary btn-lg flex-fill text-center">
-                          Schedule Visit
-                        </a>
-                        <a
-                          href="tel:+919080654251"
-                          class="btn btn-outline-primary btn-lg flex-fill text-center"
-                        >
-                          Call Now
-                        </a>
-                      </div>
-                    </div>
+                  <h4 class="gradient-text mb-4">Office Hours</h4>
+                  <div class="d-flex justify-content-between mb-2">
+                    <span><strong>Monday - Saturday:</strong></span>
+                    <span class="gradient-text">10:00 AM - 7:00 PM</span>
+                  </div>
+                  <div class="d-flex justify-content-between mb-4">
+                    <span><strong>Sunday:</strong></span>
+                    <span class="text-muted">Closed</span>
+                  </div>
+                  <div class="d-flex gap-3">
+                    <a href="#contact" class="btn btn-gradient btn-lg flex-fill"
+                      >Schedule Visit</a
+                    >
+                    <a
+                      href="tel:+917448956396"
+                      class="btn btn-neon btn-lg flex-fill"
+                      >Call Now</a
+                    >
                   </div>
                 </div>
               </div>
@@ -1944,91 +3411,107 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact-section">
+    <section id="contact" class="section contact-section">
       <div class="container-fluid">
         <div class="row">
           <div class="col-12 text-center mb-5">
-            <h2 class="section-title text-white" data-aos="fade-up">
+            <h2
+              class="gradient-text"
+              data-aos="fade-up"
+              style="
+                font-size: 3.5rem;
+                font-family: 'Space Grotesk', sans-serif;
+              "
+            >
               Get In Touch
             </h2>
-            <p
-              class="section-subtitle text-light"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
+            <p class="lead" data-aos="fade-up" data-aos-delay="100">
               Ready to boost your online presence? Let's talk!
             </p>
           </div>
         </div>
+
         <div class="row g-4 align-items-stretch">
-          <!-- Contact Info Card (from contact.html) -->
-          <div class="col-12 col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="card border-0 shadow h-100 rounded-4">
-              <div class="card-body">
-                <h4 class="mb-4 text-primary">
-                  <i class="bi bi-person-lines-fill me-2"></i>
-                  Contact Information
-                </h4>
-                <ul class="list-unstyled mb-4">
-                  <li class="mb-3">
-                    <i class="bi bi-telephone text-primary me-2"></i>
-                    <span class="fw-bold">+91 9080654251</span>
-                  </li>
-                  <li class="mb-3">
-                    <i class="bi bi-envelope text-primary me-2"></i>
-                    <span class="fw-bold">godwin@gmail.com</span>
-                  </li>
-                  <li class="mb-3">
-                    <i class="bi bi-geo-alt text-primary me-2"></i>
-                    <span>
-                      No 4/63 A, 5th Cross Street, Bhelpur Koothappar, Thiruverumbur (tp),<br>
-                      PO: Thiruverumbur, DIST: Tiruchirappalli,<br>
-                      Tamil Nadu - 620013
-                    </span>
-                  </li>
-                </ul>
-                <div class="border-top pt-3">
-                  <div class="mb-2">
-                    <i class="bi bi-clock text-primary me-2"></i>
-                    <span class="fw-bold">Office Hours</span>
-                  </div>
-                  <div>
-                    Monday – Saturday: 9:00 AM – 7:00 PM<br>
-                    Sunday: Closed
-                  </div>
+          <!-- Contact Info Card -->
+          <div
+            class="col-12 col-lg-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="contact-card">
+              <h4 class="gradient-text mb-4">
+                <i class="bi bi-person-lines-fill me-2"></i>Contact Information
+              </h4>
+              <ul class="list-unstyled mb-4">
+                <li class="mb-3">
+                  <i class="bi bi-telephone gradient-text me-2"></i>
+                  <span class="fw-bold">+91 7448956396</span>
+                </li>
+                <li class="mb-3">
+                  <i class="bi bi-envelope gradient-text me-2"></i>
+                  <span class="fw-bold">antodigitechs@gmail.com</span>
+                </li>
+                <li class="mb-3">
+                  <i class="bi bi-geo-alt gradient-text me-2"></i>
+                  <span>
+                    No.4/108, Pugazh Complex<br />
+                    8th Street, Gandhi Nagar<br />
+                    Kattur, Trichy 620019.
+                  </span>
+                </li>
+              </ul>
+              <div
+                class="border-top pt-3"
+                style="border-color: rgba(255, 255, 255, 0.1) !important"
+              >
+                <div class="mb-2">
+                  <i class="bi bi-clock gradient-text me-2"></i>
+                  <span class="fw-bold">Office Hours</span>
+                </div>
+                <div>
+                  Monday – Saturday: 10:00 AM – 7:00 PM<br />
+                  Sunday: Closed
                 </div>
               </div>
             </div>
           </div>
-          <!-- Location Card (from contact.html) -->
-          <div class="col-12 col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="card border-0 shadow h-100 rounded-4">
-              <div class="card-body">
-                <h4 class="mb-4 text-danger">
-                  <i class="bi bi-geo-alt-fill me-2"></i>
-                  Our Location
-                </h4>
-                <div class="ratio ratio-16x9 rounded-3 overflow-hidden">
-                  <iframe
-                    src="https://www.google.com/maps?q=No+4/63+A,+5th+Cross+Street,+Bhelpur+Koothappar,+Thiruverumbur,+Tiruchirappalli,+Tamil+Nadu+620013&output=embed"
-                    width="100%"
-                    height="100%"
-                    style="border:0;"
-                    allowfullscreen=""
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"
-                    title="RankMaster SEO Location"
-                  ></iframe>
-                </div>
+
+          <!-- Location Card -->
+          <div
+            class="col-12 col-lg-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="contact-card">
+              <h4 class="gradient-text mb-4">
+                <i class="bi bi-geo-alt-fill me-2"></i>Our Location
+              </h4>
+              <div class="ratio ratio-16x9 rounded-3 overflow-hidden">
+                <iframe
+                  src="https://www.google.com/maps?q=No+4/108,+Pugazh+Complex,+8th+Street,+Gandhi+Nagar,+Kattur,+Trichy+620019&output=embed"
+                  width="100%"
+                  height="100%"
+                  style="border: 0; filter: invert(90%) hue-rotate(180deg)"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  title="Antodigitechs SEO Location"
+                ></iframe>
               </div>
             </div>
           </div>
         </div>
+
+        <!-- Contact Form -->
         <div class="row mt-5">
-          <div class="col-12 col-lg-8 mx-auto" data-aos="fade-up" data-aos-delay="500">
-            <div class="contact-form bg-white p-5 rounded-4">
-              <h4 class="text-dark mb-4">Send us a Message</h4>
-              <form>
+          <div
+            class="col-12 col-lg-8 mx-auto"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="glow-card">
+              <h4 class="gradient-text mb-4 text-center">Send us a Message</h4>
+              <form id="contactForm">
                 <div class="row g-3">
                   <div class="col-md-6">
                     <input
@@ -2079,11 +3562,8 @@
                     ></textarea>
                   </div>
                   <div class="col-12 text-center">
-                    <button
-                      type="submit"
-                      class="btn btn-custom btn-lg hvr-grow"
-                    >
-                      Send Message
+                    <button type="submit" class="btn btn-gradient btn-lg">
+                      <i class="bi bi-send me-2"></i>Send Message
                     </button>
                   </div>
                 </div>
@@ -2095,115 +3575,121 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-5" style="z-index:2;position:relative;">
+    <footer class="py-5">
       <div class="container-fluid">
         <div class="row g-4">
           <div class="col-12 col-lg-4 mb-4 mb-lg-0">
-            <h5 class="text-warning mb-3">
-              <i class="bi bi-graph-up-arrow me-2"></i>RankMaster SEO
+            <h5 class="gradient-text mb-3">
+              <i class="bi bi-graph-up-arrow me-2"></i>Antodigitechs SEO
             </h5>
-            <p class="text-light opacity-75 mb-4">
+            <p class="opacity-75 mb-4">
               Your trusted partner in digital growth. We help businesses achieve
               higher search rankings, increased traffic, and better online
               visibility through proven SEO strategies.
             </p>
             <div class="social-links">
-              <a href="#" class="hvr-grow"><i class="bi bi-facebook"></i></a>
-              <a href="#" class="hvr-grow"><i class="bi bi-twitter"></i></a>
-              <a href="#" class="hvr-grow"><i class="bi bi-linkedin"></i></a>
-              <a href="#" class="hvr-grow"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="float-animation"
+                ><i class="bi bi-facebook"></i
+              ></a>
+              <a href="#" class="float-animation" style="animation-delay: 0.5s"
+                ><i class="bi bi-twitter"></i
+              ></a>
+              <a href="#" class="float-animation" style="animation-delay: 1s"
+                ><i class="bi bi-linkedin"></i
+              ></a>
+              <a href="#" class="float-animation" style="animation-delay: 1.5s"
+                ><i class="bi bi-instagram"></i
+              ></a>
             </div>
           </div>
           <div class="col-6 col-lg-2 mb-4 mb-lg-0">
-            <h6 class="text-warning mb-3">Quick Links</h6>
+            <h6 class="gradient-text mb-3">Quick Links</h6>
             <ul class="list-unstyled">
               <li>
-                <a
-                  href="#home"
-                  class="text-light opacity-75 text-decoration-none"
-                  >Home</a
-                >
+                <a href="#home" class="text-decoration-none opacity-75">Home</a>
               </li>
               <li>
-                <a
-                  href="#services"
-                  class="text-light opacity-75 text-decoration-none"
+                <a href="#services" class="text-decoration-none opacity-75"
                   >Services</a
                 >
               </li>
               <li>
-                <a
-                  href="#about"
-                  class="text-light opacity-75 text-decoration-none"
+                <a href="#about" class="text-decoration-none opacity-75"
                   >About</a
                 >
               </li>
               <li>
-                <a
-                  href="#gallery"
-                  class="text-light opacity-75 text-decoration-none"
+                <a href="#gallery" class="text-decoration-none opacity-75"
                   >Gallery</a
                 >
               </li>
               <li>
-                <a
-                  href="#contact"
-                  class="text-light opacity-75 text-decoration-none"
+                <a href="#contact" class="text-decoration-none opacity-75"
                   >Contact</a
                 >
               </li>
             </ul>
           </div>
           <div class="col-6 col-lg-3 mb-4 mb-lg-0">
-            <h6 class="text-warning mb-3">Our Services</h6>
+            <h6 class="gradient-text mb-3">Our Services</h6>
             <ul class="list-unstyled">
               <li>
-                <a href="#" class="text-light opacity-75 text-decoration-none"
+                <a href="#services" class="text-decoration-none opacity-75"
                   >SEO Optimization</a
                 >
               </li>
               <li>
-                <a href="#" class="text-light opacity-75 text-decoration-none"
+                <a
+                  href="#"
+                  class="text-decoration-none opacity-75"
+                  data-bs-toggle="modal"
+                  data-bs-target="#keywordResearchModal"
                   >Keyword Research</a
                 >
               </li>
               <li>
-                <a href="#" class="text-light opacity-75 text-decoration-none"
+                <a
+                  href="#"
+                  class="text-decoration-none opacity-75"
+                  data-bs-toggle="modal"
+                  data-bs-target="#contentOptimizationModal"
                   >Content Marketing</a
                 >
               </li>
               <li>
-                <a href="#" class="text-light opacity-75 text-decoration-none"
+                <a
+                  href="#"
+                  class="text-decoration-none opacity-75"
+                  data-bs-toggle="modal"
+                  data-bs-target="#localSeoModal"
                   >Local SEO</a
                 >
               </li>
               <li>
-                <a href="#" class="text-light opacity-75 text-decoration-none"
+                <a href="#services" class="text-decoration-none opacity-75"
                   >Link Building</a
                 >
               </li>
             </ul>
           </div>
           <div class="col-12 col-lg-3">
-            <h6 class="text-warning mb-3">Contact Info</h6>
+            <h6 class="gradient-text mb-3">Contact Info</h6>
             <ul class="list-unstyled">
-              <li class="text-light opacity-75 mb-2">
-                <i class="bi bi-geo-alt me-2"></i>No 4/63 A, 5th Cross Street<br />
-                <span class="ms-4">Bhelpur Koothappar, Thiruverumbur (tp)</span
-                ><br />
+              <li class="opacity-75 mb-2">
+                <i class="bi bi-geo-alt me-2"></i>No.4/108, Pugazh Complex<br />
                 <span class="ms-4"
-                  >PO: Thiruverumbur, DIST: Tiruchirappalli</span
-                ><br />
-                <span class="ms-4">Tamil Nadu - 620013</span>
+                  >8th Street, Gandhi Nagar<br />Kattur, Trichy 620019.</span
+                >
               </li>
-              <li class="text-light opacity-75 mb-2">
-                <i class="bi bi-telephone me-2"></i>+91 9080654251
+              <li class="opacity-75 mb-2">
+                <i class="bi bi-telephone me-2"></i>+91 7448956396
               </li>
-              <li class="text-light opacity-75 mb-2">
-                <i class="bi bi-envelope me-2"></i>godwin@gmail.com
+              <li class="opacity-75 mb-2">
+                <i class="bi bi-envelope me-2"></i>antodigitechs@gmail.com
               </li>
-              <li class="text-light opacity-75">
-                <i class="bi bi-clock me-2"></i>Mon-Sat: 9AM-7PM, Sun: Closed
+              <li class="opacity-75">
+                <i class="bi bi-clock me-2"></i>Mon-Sat: 10:00 AM-7:00 PM, Sun:
+                Closed
               </li>
             </ul>
           </div>
@@ -2211,15 +3697,15 @@
         <hr class="my-4 opacity-25" />
         <div class="row align-items-center">
           <div class="col-12 col-md-6 mb-2 mb-md-0">
-            <p class="text-light opacity-75 mb-0">
-              &copy; 2025 RankMaster SEO. All Rights Reserved.
+            <p class="opacity-75 mb-0">
+              &copy; 2025 Antodigitechs SEO. All Rights Reserved.
             </p>
           </div>
           <div class="col-12 col-md-6 text-md-end">
-            <a href="#" class="text-light opacity-75 text-decoration-none me-3"
+            <a href="#" class="text-decoration-none opacity-75 me-3"
               >Privacy Policy</a
             >
-            <a href="#" class="text-light opacity-75 text-decoration-none"
+            <a href="#" class="text-decoration-none opacity-75"
               >Terms of Service</a
             >
           </div>
@@ -2227,41 +3713,106 @@
       </div>
     </footer>
 
-    <!-- Bootstrap JS -->
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-
-    <!-- AOS -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-
-    <!-- Typed.js -->
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-
-    <!-- Particle.js library -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
     <script>
       // Initialize AOS
       AOS.init({
-        duration: 1200,
+        duration: 1000,
         once: true,
         offset: 100,
+        easing: "ease-out-cubic",
       });
 
+      // Loading Screen
+      window.addEventListener("load", function () {
+        setTimeout(() => {
+          document.getElementById("loading").classList.add("hidden");
+        }, 1500);
+      });
+
+      // Custom Cursor
+      const cursor = document.getElementById("cursor");
+      const cursorFollower = document.getElementById("cursor-follower");
+
+      document.addEventListener("mousemove", (e) => {
+        cursor.style.left = e.clientX - 10 + "px";
+        cursor.style.top = e.clientY - 10 + "px";
+
+        setTimeout(() => {
+          cursorFollower.style.left = e.clientX - 20 + "px";
+          cursorFollower.style.top = e.clientY - 20 + "px";
+        }, 100);
+      });
+
+      // Floating Particles
+      function createParticles() {
+        const particlesContainer = document.getElementById("particles");
+        const numberOfParticles = 50;
+
+        for (let i = 0; i < numberOfParticles; i++) {
+          const particle = document.createElement("div");
+          particle.className = "particle";
+          particle.style.left = Math.random() * 100 + "%";
+          particle.style.top = Math.random() * 100 + "%";
+          particle.style.animationDelay = Math.random() * 6 + "s";
+          particle.style.animationDuration = Math.random() * 4 + 4 + "s";
+
+          // Random colors
+          const colors = [
+            "var(--neon-blue)",
+            "var(--neon-purple)",
+            "var(--neon-pink)",
+          ];
+          const randomColor = colors[Math.floor(Math.random() * colors.length)];
+          particle.style.background = randomColor;
+          particle.style.boxShadow = `0 0 10px ${randomColor}`;
+
+          particlesContainer.appendChild(particle);
+        }
+      }
+
+      createParticles();
+
       // Typed.js for hero text
-      var typed = new Typed("#typed-text", {
+      const typed = new Typed("#typed-text", {
         strings: [
           "We Optimize Your Website 🚀",
           "We Boost Your Rankings 📈",
           "We Drive Quality Traffic 🎯",
           "We Grow Your Business 💼",
         ],
-        typeSpeed: 50,
-        backSpeed: 30,
+        typeSpeed: 60,
+        backSpeed: 40,
         loop: true,
         backDelay: 2000,
+        showCursor: true,
+        cursorChar: "|",
+      });
+
+      // Enhanced Navbar Scroll Effect
+      let lastScroll = 0;
+      window.addEventListener("scroll", () => {
+        const navbar = document.getElementById("navbar");
+        const currentScroll = window.pageYOffset;
+
+        if (currentScroll > 100) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+
+        if (currentScroll > lastScroll && currentScroll > 100) {
+          navbar.style.transform = "translateY(-100%)";
+        } else {
+          navbar.style.transform = "translateY(0)";
+        }
+
+        lastScroll = currentScroll;
       });
 
       // Smooth scrolling for navigation links
@@ -2274,177 +3825,272 @@
               behavior: "smooth",
               block: "start",
             });
-                   }
-        });
-      });
-
-      // Navbar background on scroll
-      window.addEventListener("scroll", function () {
-        const navbar = document.querySelector(".navbar");
-        if (window.scrollY > 50) {
-          navbar.style.background = "rgba(31, 41, 55, 0.98)";
-        } else {
-          navbar.style.background = "rgba(31, 41, 55, 0.95)";
-        }
-      });
-
-      // WhatsApp form submission handler
-      const form = document.querySelector("form");
-      if (form) {
-        form.addEventListener("submit", function (e) {
-          e.preventDefault();
-
-          // Collect form values
-          const name = form.querySelector('input[placeholder="Your Name"]').value.trim();
-          const email = form.querySelector('input[placeholder="Your Email"]').value.trim();
-          const phone = form.querySelector('input[placeholder="Your Phone"]').value.trim();
-          const website = form.querySelector('input[placeholder="Your Website"]').value.trim();
-          const service = form.querySelector('.form-select').value;
-          const message = form.querySelector('textarea').value.trim();
-
-          // Simple validation (Name and Email required)
-          if (!name || !email) {
-            alert("Please fill in all required fields.");
-            return;
           }
-
-          // Format WhatsApp message
-          const whatsappMsg =
-            `Contact Form Submission:\n` +
-            `Name: ${name}\n` +
-            `Email: ${email}\n` +
-            (phone ? `Phone: ${phone}\n` : "") +
-            (website ? `Website: ${website}\n` : "") +
-            (service && service !== "Select Service" ? `Service: ${service}\n` : "") +
-            (message ? `Message: ${message}` : "");
-
-          // WhatsApp API link
-          const whatsappNumber = "+919994821732";
-          const whatsappUrl =
-            `https://wa.me/${whatsappNumber}?text=` + encodeURIComponent(whatsappMsg);
-
-          // Open WhatsApp
-          window.open(whatsappUrl, "_blank");
         });
-      }
-
-      // Add floating animation delay to service cards
-      document.querySelectorAll(".floating-card").forEach((card, index) => {
-        card.style.animationDelay = `${index * 0.5}s`;
       });
 
-      // Intersection Observer for counter animation
-      const counters = document.querySelectorAll(".col-6 h5");
-      const observerOptions = {
-        threshold: 0.7,
-      };
+      // Counter Animation
+      function animateCounters() {
+        const counters = document.querySelectorAll(".stat-number[data-count]");
 
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const counter = entry.target;
-            const targetText = counter.textContent;
-            const target = parseInt(targetText);
+        const observerOptions = {
+          threshold: 0.7,
+          rootMargin: "0px 0px -50px 0px",
+        };
 
-            if (!isNaN(target)) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const counter = entry.target;
+              const target = parseFloat(counter.getAttribute("data-count"));
               let count = 0;
-              const increment = target / 50;
+              const increment = target / 60;
 
               const updateCounter = () => {
                 if (count < target) {
                   count += increment;
-                  const currentValue = Math.ceil(count);
-                  if (targetText.includes("%")) {
-                    counter.textContent = currentValue + "%";
-                  } else if (targetText.includes("+")) {
-                    counter.textContent = currentValue + "+";
-                  } else if (targetText.includes("/")) {
-                    counter.textContent = currentValue + "/5";
+                  if (target === 4.9) {
+                    counter.textContent = count.toFixed(1);
                   } else {
-                    counter.textContent = currentValue + "+";
+                    counter.textContent = Math.ceil(count);
                   }
                   requestAnimationFrame(updateCounter);
                 } else {
-                  counter.textContent = targetText;
+                  if (target === 4.9) {
+                    counter.textContent = "4.9";
+                  } else {
+                    counter.textContent = target + (target >= 100 ? "+" : "");
+                  }
                 }
               };
 
               updateCounter();
               observer.unobserve(counter);
             }
+          });
+        }, observerOptions);
+
+        counters.forEach((counter) => observer.observe(counter));
+      }
+
+      animateCounters();
+
+      // Scroll Animations
+      function handleScrollAnimations() {
+        const elements = document.querySelectorAll(".fade-in-up");
+
+        elements.forEach((element) => {
+          const elementTop = element.getBoundingClientRect().top;
+          const elementVisible = 150;
+
+          if (elementTop < window.innerHeight - elementVisible) {
+            element.classList.add("active");
           }
         });
-      }, observerOptions);
+      }
 
-      counters.forEach((counter) => {
-        observer.observe(counter);
+      window.addEventListener("scroll", handleScrollAnimations);
+
+      // Enhanced Button Hover Effects
+      document.querySelectorAll(".btn-neon, .btn-gradient").forEach((btn) => {
+        btn.addEventListener("mouseenter", function () {
+          this.style.transform = "translateY(-3px) scale(1.05)";
+        });
+
+        btn.addEventListener("mouseleave", function () {
+          this.style.transform = "translateY(0) scale(1)";
+        });
       });
 
-      // Add scroll effect to navbar
-      window.addEventListener("scroll", function () {
-        const navbar = document.querySelector(".navbar");
-        if (window.scrollY > 100) {
-          navbar.classList.add("scrolled");
-        } else {
-          navbar.classList.remove("scrolled");
+      // Interactive Card Effects
+      document
+        .querySelectorAll(".glow-card, .featured-service-card")
+        .forEach((card) => {
+          card.addEventListener("mouseenter", function () {
+            this.style.transform =
+              "translateY(-10px) rotateX(5deg) rotateY(5deg)";
+          });
+
+          card.addEventListener("mouseleave", function () {
+            this.style.transform = "translateY(0) rotateX(0) rotateY(0)";
+          });
+        });
+
+      // Form Submission with WhatsApp
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const name = this.querySelector(
+            'input[placeholder="Your Name"]'
+          ).value.trim();
+          const email = this.querySelector(
+            'input[placeholder="Your Email"]'
+          ).value.trim();
+          const phone = this.querySelector(
+            'input[placeholder="Your Phone"]'
+          ).value.trim();
+          const website = this.querySelector(
+            'input[placeholder="Your Website"]'
+          ).value.trim();
+          const service = this.querySelector(".form-select").value;
+          const message = this.querySelector("textarea").value.trim();
+
+          if (!name || !email) {
+            alert("Please fill in all required fields.");
+            return;
+          }
+
+          const whatsappMsg =
+            `🚀 *New Contact Form Submission* 🚀\n\n` +
+            `👤 *Name:* ${name}\n` +
+            `📧 *Email:* ${email}\n` +
+            (phone ? `📱 *Phone:* ${phone}\n` : "") +
+            (website ? `🌐 *Website:* ${website}\n` : "") +
+            (service && service !== "Select Service"
+              ? `🎯 *Service:* ${service}\n`
+              : "") +
+            (message ? `💬 *Message:* ${message}` : "");
+
+          const whatsappNumber = "917448956396";
+          const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+            whatsappMsg
+          )}`;
+
+          window.open(whatsappUrl, "_blank");
+        });
+
+      // Parallax Effect
+      window.addEventListener("scroll", () => {
+        const scrolled = window.pageYOffset;
+        const rate = scrolled * -0.5;
+
+        document.querySelector(
+          ".hero"
+        ).style.transform = `translateY(${rate}px)`;
+      });
+
+      // Dynamic Background Color Change
+      let colorIndex = 0;
+      const backgroundColors = [
+        "linear-gradient(45deg, #0a0a0a, #1a1a2e, #16213e, #0f4c75)",
+        "linear-gradient(45deg, #0a0a0a, #2d1b69, #11998e, #38ef7d)",
+        "linear-gradient(45deg, #0a0a0a, #667eea, #764ba2, #f093fb)",
+        "linear-gradient(45deg, #0a0a0a, #ff006e, #8338ec, #3a86ff)",
+      ];
+
+      setInterval(() => {
+        const animatedBg = document.querySelector(".animated-bg");
+        colorIndex = (colorIndex + 1) % backgroundColors.length;
+        animatedBg.style.background = backgroundColors[colorIndex];
+        animatedBg.style.backgroundSize = "400% 400%";
+      }, 10000);
+
+      // Add glowing effect to interactive elements
+      document
+        .querySelectorAll(".service-icon, .stat-card, .gallery-item")
+        .forEach((element) => {
+          element.addEventListener("mouseenter", function () {
+            this.style.boxShadow = "0 0 30px rgba(0, 245, 255, 0.6)";
+          });
+
+          element.addEventListener("mouseleave", function () {
+            this.style.boxShadow = "";
+          });
+        });
+
+      // Typewriter effect for section titles
+      function typewriterEffect(element, text, speed = 100) {
+        let i = 0;
+        element.innerHTML = "";
+
+        function typing() {
+          if (i < text.length) {
+            element.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typing, speed);
+          }
         }
+
+        typing();
+      }
+
+      // Initialize typewriter effects when sections come into view
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (
+              entry.isIntersecting &&
+              !entry.target.classList.contains("typed")
+            ) {
+              const text = entry.target.textContent;
+              entry.target.classList.add("typed");
+              typewriterEffect(entry.target, text, 50);
+            }
+          });
+        },
+        { threshold: 0.5 }
+      );
+
+      // Observe section titles for typewriter effect
+      document.querySelectorAll("h2.gradient-text").forEach((title) => {
+        observer.observe(title);
       });
 
-      // Preloader (optional)
-      window.addEventListener("load", function () {
-        document.body.classList.add("loaded");
+      // Add ripple effect to buttons
+      function createRipple(event) {
+        const button = event.currentTarget;
+        const circle = document.createElement("span");
+        const diameter = Math.max(button.clientWidth, button.clientHeight);
+        const radius = diameter / 2;
+
+        circle.style.width = circle.style.height = `${diameter}px`;
+        circle.style.left = `${event.clientX - button.offsetLeft - radius}px`;
+        circle.style.top = `${event.clientY - button.offsetTop - radius}px`;
+        circle.classList.add("ripple");
+
+        const ripple = button.getElementsByClassName("ripple")[0];
+        if (ripple) {
+          ripple.remove();
+        }
+
+        button.appendChild(circle);
+      }
+
+      document.querySelectorAll(".btn").forEach((btn) => {
+        btn.addEventListener("click", createRipple);
       });
 
-      // Enhanced Particle.js config for full screen
-      particlesJS("particles-js", {
-        particles: {
-          number: { value: 120, density: { enable: true, value_area: 1200 } },
-          color: { value: ["#2563eb", "#1e40af", "#f59e0b", "#fff"] },
-          shape: { type: "circle" },
-          opacity: { value: 0.35, random: true },
-          size: { value: 4, random: true },
-          line_linked: { enable: true, distance: 130, color: "#fff", opacity: 0.18, width: 1.2 },
-          move: { enable: true, speed: 2, direction: "none", random: false, straight: false, out_mode: "out" }
-        },
-        interactivity: {
-          detect_on: "canvas",
-          events: {
-            onhover: { enable: true, mode: "grab" },
-            onclick: { enable: true, mode: "push" },
-            resize: true
-          },
-          modes: {
-            grab: { distance: 180, line_linked: { opacity: 0.35 } },
-            push: { particles_nb: 6 }
+      // Add CSS for ripple effect
+      const style = document.createElement("style");
+      style.textContent = `
+        .btn {
+          position: relative;
+          overflow: hidden;
+        }
+        
+        .ripple {
+          position: absolute;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.3);
+          transform: scale(0);
+          animation: ripple-animation 0.6s linear;
+          pointer-events: none;
+        }
+        
+        @keyframes ripple-animation {
+          to {
+            transform: scale(4);
+            opacity: 0;
           }
-        },
-        retina_detect: true
-      });
-      // Particle.js for home section
-      particlesJS("particles-home", {
-        particles: {
-          number: { value: 80, density: { enable: true, value_area: 800 } },
-          color: { value: ["#2563eb", "#1e40af", "#f59e0b", "#fff"] },
-          shape: { type: "circle" },
-          opacity: { value: 0.25, random: true },
-          size: { value: 3, random: true },
-          line_linked: { enable: true, distance: 120, color: "#fff", opacity: 0.15, width: 1 },
-          move: { enable: true, speed: 1.2, direction: "none", random: false, straight: false, out_mode: "out" }
-        },
-        interactivity: {
-          detect_on: "canvas",
-          events: {
-            onhover: { enable: true, mode: "grab" },
-            onclick: { enable: true, mode: "push" },
-            resize: true
-          },
-          modes: {
-            grab: { distance: 140, line_linked: { opacity: 0.25 } },
-            push: { particles_nb: 4 }
-          }
-        },
-        retina_detect: true
-      });
+        }
+      `;
+      document.head.appendChild(style);
+
+      console.log(
+        "🚀 Antodigitechs SEO - Ultra Animated Website Loaded Successfully! 🚀"
+      );
     </script>
   </body>
 </html>
