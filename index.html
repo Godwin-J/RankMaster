@@ -2150,7 +2150,6 @@
                   href="#contact"
                   class="text-light opacity-75 text-decoration-none"
                   >Contact</a
-               
                 >
               </li>
             </ul>
@@ -2289,36 +2288,43 @@
         }
       });
 
-      // Form submission handler
+      // WhatsApp form submission handler
       const form = document.querySelector("form");
       if (form) {
         form.addEventListener("submit", function (e) {
           e.preventDefault();
 
-          // Simple form validation
-          const inputs = this.querySelectorAll(
-            "input[required], select[required], textarea[required]"
-          );
-          let isValid = true;
+          // Collect form values
+          const name = form.querySelector('input[placeholder="Your Name"]').value.trim();
+          const email = form.querySelector('input[placeholder="Your Email"]').value.trim();
+          const phone = form.querySelector('input[placeholder="Your Phone"]').value.trim();
+          const website = form.querySelector('input[placeholder="Your Website"]').value.trim();
+          const service = form.querySelector('.form-select').value;
+          const message = form.querySelector('textarea').value.trim();
 
-          inputs.forEach((input) => {
-            if (!input.value.trim()) {
-              isValid = false;
-              input.classList.add("is-invalid");
-            } else {
-              input.classList.remove("is-invalid");
-            }
-          });
-
-          if (isValid) {
-            // Show success message (in real implementation, send to server)
-            alert(
-              "Thank you for your message! We will get back to you within 24 hours."
-            );
-            this.reset();
-          } else {
+          // Simple validation (Name and Email required)
+          if (!name || !email) {
             alert("Please fill in all required fields.");
+            return;
           }
+
+          // Format WhatsApp message
+          const whatsappMsg =
+            `Contact Form Submission:\n` +
+            `Name: ${name}\n` +
+            `Email: ${email}\n` +
+            (phone ? `Phone: ${phone}\n` : "") +
+            (website ? `Website: ${website}\n` : "") +
+            (service && service !== "Select Service" ? `Service: ${service}\n` : "") +
+            (message ? `Message: ${message}` : "");
+
+          // WhatsApp API link
+          const whatsappNumber = "+919994821732";
+          const whatsappUrl =
+            `https://wa.me/${whatsappNumber}?text=` + encodeURIComponent(whatsappMsg);
+
+          // Open WhatsApp
+          window.open(whatsappUrl, "_blank");
         });
       }
 
@@ -2442,4 +2448,3 @@
     </script>
   </body>
 </html>
-
