@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>RankMaster SEO</title>
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
 
     <!-- Bootstrap CSS -->
     <link
@@ -37,13 +38,98 @@
 
     <style>
       html { scroll-behavior: smooth; }
-
+      body {
+        background: #101014 !important;
+        color: #fff !important;
+        overflow-x: hidden;
+      }
       :root {
         --primary-color: #2563eb;
         --secondary-color: #1e40af;
         --accent-color: #f59e0b;
-        --dark-color: #1f2937;
-        --light-color: #f8fafc;
+        --dark-color: #101014;
+        --darker-color: #18181c;
+        --light-color: #fff;
+        --card-gradient: linear-gradient(135deg, #18181c 60%, #101014 100%);
+        --card-shadow: 0 8px 32px 0 rgba(37,99,235,0.25), 0 1.5px 6px 0 rgba(30,64,175,0.15);
+      }
+      .hero,
+      .services-section,
+      .about-section,
+      .gallery-section,
+      .contact-section,
+      .story-section,
+      .gallery-contact-section,
+      .services-contact-section,
+      .contact-form,
+      .card,
+      .service-card,
+      .featured-service-card,
+      .gallery-item,
+      .contact-card {
+        background: #101014 !important;
+        color: #fff !important;
+        box-shadow: var(--card-shadow) !important;
+        border: none !important;
+      }
+      .navbar,
+      footer {
+        background: #101014 !important;
+        color: #fff !important;
+      }
+      .bg-white,
+      .bg-light {
+        background: #101014 !important;
+        color: #fff !important;
+      }
+      .card-body,
+      .section-title,
+      .section-subtitle,
+      h1, h2, h3, h4, h5, h6, p, span, small, label, li, ul, ol, a, .lead {
+        color: #fff !important;
+      }
+      .text-dark,
+      .text-muted,
+      .text-light,
+      .text-primary,
+      .text-danger,
+      .text-warning {
+        color: #fff !important;
+        opacity: 1 !important;
+      }
+      .form-control,
+      .form-select {
+        background: #18181c !important;
+        color: #fff !important;
+        border: 1px solid #23232a !important;
+      }
+      .form-control:focus,
+      .form-select:focus {
+        background: #18181c !important;
+        color: #fff !important;
+        border-color: #2563eb !important;
+        box-shadow: 0 0 0 2px #2563eb33;
+      }
+      .btn-custom,
+      .btn-primary,
+      .btn-outline-primary,
+      .btn-outline-light {
+        color: #fff !important;
+        box-shadow: 0 4px 16px 0 rgba(37,99,235,0.25);
+        background: linear-gradient(135deg, #23243a 0%, #101014 100%) !important;
+        border: none !important;
+      }
+      .btn-outline-light {
+        border: 1px solid #fff !important;
+      }
+      .social-links a {
+        background: #18181c !important;
+        color: #fff !important;
+        box-shadow: 0 2px 8px 0 rgba(37,99,235,0.15);
+      }
+      .social-links a:hover {
+        background: #2563eb !important;
+        color: #fff !important;
       }
 
       /* Hero section */
@@ -94,14 +180,14 @@
       /* Services Section */
       .services-section {
         padding: 80px 0;
-        background: linear-gradient(45deg, #f8fafc, #e2e8f0);
+        background: linear-gradient(135deg, #181c2f 0%, #23243a 100%);
       }
 
       .service-card {
-        background: white;
+        background: var(--card-gradient) !important;
         border-radius: 20px;
         padding: 2.5rem;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        box-shadow: var(--card-shadow) !important;
         transition: all 0.3s ease;
         height: 100%;
         border: none;
@@ -127,10 +213,10 @@
 
       /* Featured Service Cards */
       .featured-service-card {
-        background: white;
+        background: var(--card-gradient) !important;
         border-radius: 20px;
         overflow: hidden;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        box-shadow: var(--card-shadow) !important;
         transition: all 0.3s ease;
         cursor: pointer;
         height: 100%;
@@ -319,7 +405,7 @@
       /* About Section */
       .about-section {
         padding: 80px 0;
-        background: white;
+        background: var(--card-gradient) !important;
       }
 
       .about-img {
@@ -435,16 +521,16 @@
 
       /* Footer */
       footer {
-        background: linear-gradient(135deg, var(--dark-color), #111827);
-        color: white;
+        background: linear-gradient(135deg, #181c2f 0%, #23243a 100%) !important;
+        color: #e5e7eb !important;
       }
 
       .social-links a {
         display: inline-block;
         width: 50px;
         height: 50px;
-        background: var(--primary-color);
-        color: white;
+        background: #23243a !important;
+        color: #e5e7eb !important;
         border-radius: 50%;
         text-align: center;
         line-height: 50px;
@@ -453,9 +539,8 @@
       }
 
       .social-links a:hover {
-        background: var(--accent-color);
-        transform: translateY(-5px);
-        color: white;
+        background: #2563eb !important;
+        color: #fff !important;
       }
 
       /* Section Headings */
@@ -510,7 +595,9 @@
           font-size: 2rem;
         }
         .gallery-item img {
-          height: 180px;
+          width: 100%;
+          height: 250px;
+          object-fit: cover;
         }
         .about-img img {
           width: 100%;
@@ -543,7 +630,9 @@
           height: 60px;
         }
         .gallery-item img {
-          height: 120px;
+          width: 100%;
+          height: 250px;
+          object-fit: cover;
         }
         .service-image {
           height: 120px;
@@ -590,7 +679,9 @@
           font-size: 1.1rem;
         }
         .gallery-item img {
-          height: 80px;
+          width: 100%;
+          height: 250px;
+          object-fit: cover;
         }
         .service-image {
           height: 80px;
@@ -614,15 +705,86 @@
           font-size: 0.9rem;
         }
       }
-      /* Ensure no horizontal scroll */
-      body {
-        overflow-x: hidden;
+
+      /* Fix modal text visibility */
+      .modal-content,
+      .modal-header,
+      .modal-body,
+      .modal-footer {
+        background: #18181c !important;
+        color: #fff !important;
+      }
+      .modal-title,
+      .modal-body h6,
+      .modal-body p,
+      .modal-body ul,
+      .modal-body li,
+      .modal-footer .btn {
+        color: #fff !important;
+      }
+      .modal-body ul.list-unstyled li {
+        display: flex;
+        align-items: center;
+        font-size: 1rem;
+        margin-bottom: 0.75rem;
+      }
+      .modal-body ul.list-unstyled li i {
+        margin-right: 0.5rem;
+        color: #22c55e !important;
+        font-size: 1.2em;
+      }
+
+      /* Enhance particles.js canvas to fully cover background */
+      #particles-js {
+        position: fixed !important;
+        top: 0; left: 0;
+        width: 100vw !important;
+        height: 100vh !important;
+        min-height: 100vh !important;
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      /* Make form placeholders visible */
+      .form-control::placeholder,
+      .form-select,
+      textarea.form-control::placeholder {
+        color: #b3b3b3 !important;
+        opacity: 1 !important;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+      }
+      /* Make select placeholder visible */
+      .form-select option {
+        color: #101014 !important;
+        background: #fff !important;
+      }
+      /* Fix select text color for selected value */
+      .form-select {
+        color: #b3b3b3 !important;
+      }
+      .form-select:focus {
+        color: #fff !important;
+      }
+      /* Particle.js canvas for home section */
+      #particles-home {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 0;
+        pointer-events: none;
       }
     </style>
   </head>
   <body>
+    <!-- Particle.js background -->
+    <div id="particles-js" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:0;"></div>
+    <!-- Particle.js for home section -->
+    <div id="particles-home"></div>
+
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-lg">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-lg" style="z-index:2;">
       <div class="container-fluid">
         <a
           class="navbar-brand animate__animated animate__bounceIn"
@@ -659,7 +821,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
+    <section id="home" class="hero" style="position:relative;z-index:1;">
       <div class="container-fluid">
         <div class="row justify-content-center">
           <div class="col-12 col-md-10 col-lg-8 text-center">
@@ -1933,7 +2095,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-5">
+    <footer class="py-5" style="z-index:2;position:relative;">
       <div class="container-fluid">
         <div class="row g-4">
           <div class="col-12 col-lg-4 mb-4 mb-lg-0">
@@ -1988,6 +2150,7 @@
                   href="#contact"
                   class="text-light opacity-75 text-decoration-none"
                   >Contact</a
+               
                 >
               </li>
             </ul>
@@ -2077,6 +2240,9 @@
     <!-- Typed.js -->
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
+    <!-- Particle.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
     <script>
       // Initialize AOS
       AOS.init({
@@ -2109,7 +2275,7 @@
               behavior: "smooth",
               block: "start",
             });
-          }
+                   }
         });
       });
 
@@ -2221,6 +2387,57 @@
       // Preloader (optional)
       window.addEventListener("load", function () {
         document.body.classList.add("loaded");
+      });
+
+      // Enhanced Particle.js config for full screen
+      particlesJS("particles-js", {
+        particles: {
+          number: { value: 120, density: { enable: true, value_area: 1200 } },
+          color: { value: ["#2563eb", "#1e40af", "#f59e0b", "#fff"] },
+          shape: { type: "circle" },
+          opacity: { value: 0.35, random: true },
+          size: { value: 4, random: true },
+          line_linked: { enable: true, distance: 130, color: "#fff", opacity: 0.18, width: 1.2 },
+          move: { enable: true, speed: 2, direction: "none", random: false, straight: false, out_mode: "out" }
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: {
+            onhover: { enable: true, mode: "grab" },
+            onclick: { enable: true, mode: "push" },
+            resize: true
+          },
+          modes: {
+            grab: { distance: 180, line_linked: { opacity: 0.35 } },
+            push: { particles_nb: 6 }
+          }
+        },
+        retina_detect: true
+      });
+      // Particle.js for home section
+      particlesJS("particles-home", {
+        particles: {
+          number: { value: 80, density: { enable: true, value_area: 800 } },
+          color: { value: ["#2563eb", "#1e40af", "#f59e0b", "#fff"] },
+          shape: { type: "circle" },
+          opacity: { value: 0.25, random: true },
+          size: { value: 3, random: true },
+          line_linked: { enable: true, distance: 120, color: "#fff", opacity: 0.15, width: 1 },
+          move: { enable: true, speed: 1.2, direction: "none", random: false, straight: false, out_mode: "out" }
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: {
+            onhover: { enable: true, mode: "grab" },
+            onclick: { enable: true, mode: "push" },
+            resize: true
+          },
+          modes: {
+            grab: { distance: 140, line_linked: { opacity: 0.25 } },
+            push: { particles_nb: 4 }
+          }
+        },
+        retina_detect: true
       });
     </script>
   </body>
