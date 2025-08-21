@@ -1,0 +1,2101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RankMaster SEO | Professional SEO Services</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Animate.css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <!-- Hover.css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.2/css/hover-min.css"
+    />
+
+    <!-- AOS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+    />
+
+    <style>
+      html { scroll-behavior: smooth; }
+
+      :root {
+        --primary-color: #2563eb;
+        --secondary-color: #1e40af;
+        --accent-color: #f59e0b;
+        --dark-color: #1f2937;
+        --light-color: #f8fafc;
+      }
+
+      /* Hero section */
+      .hero {
+        height: 100vh;
+        background: linear-gradient(135deg, rgba(37,99,235,0.9), rgba(30,64,175,0.8)),
+                    url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2015&q=80') center/cover no-repeat;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+      }
+
+      .hero h1 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
+
+      .hero .lead {
+        font-size: 1.4rem;
+        margin-bottom: 2rem;
+      }
+
+      .custom-shape-divider-bottom {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+        transform: rotate(180deg);
+      }
+
+      .custom-shape-divider-bottom svg {
+        position: relative;
+        display: block;
+        width: calc(140% + 1.3px);
+        height: 120px;
+      }
+
+      .custom-shape-divider-bottom .shape-fill {
+        fill: #ffffff;
+      }
+
+      /* Services Section */
+      .services-section {
+        padding: 80px 0;
+        background: linear-gradient(45deg, #f8fafc, #e2e8f0);
+      }
+
+      .service-card {
+        background: white;
+        border-radius: 20px;
+        padding: 2.5rem;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+        height: 100%;
+        border: none;
+      }
+
+      .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(37,99,235,0.2);
+      }
+
+      .service-icon {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        margin: 0 auto 1.5rem;
+      }
+
+      /* Featured Service Cards */
+      .featured-service-card {
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        height: 100%;
+      }
+
+      .featured-service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 25px 50px rgba(37,99,235,0.2);
+      }
+
+      .service-image {
+        position: relative;
+        height: 200px;
+        overflow: hidden;
+      }
+
+      .service-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .featured-service-card:hover .service-image img {
+        transform: scale(1.1);
+      }
+
+      .service-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(37,99,235,0.8), rgba(30,64,175,0.8));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: all 0.3s ease;
+      }
+
+      .featured-service-card:hover .service-overlay {
+        opacity: 1;
+      }
+
+      .service-icon-featured {
+        width: 60px;
+        height: 60px;
+        background: white;
+        color: var(--primary-color);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        transform: scale(0.8);
+        transition: transform 0.3s ease;
+      }
+
+      .featured-service-card:hover .service-icon-featured {
+        transform: scale(1);
+      }
+
+      .service-content {
+        padding: 2rem;
+      }
+
+      .service-content h4 {
+        color: var(--dark-color);
+        margin-bottom: 1rem;
+      }
+
+      .read-more {
+        color: var(--primary-color);
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: color 0.3s ease;
+      }
+
+      .featured-service-card:hover .read-more {
+        color: var(--secondary-color);
+      }
+
+      /* Services Contact Section */
+      .services-contact-section {
+        margin-top: 3rem;
+      }
+
+      .contact-info-compact {
+        font-size: 0.9rem;
+      }
+
+      .contact-info-compact i {
+        opacity: 0.8;
+      }
+
+      /* Story Section */
+      .story-section {
+        margin-top: 4rem;
+      }
+
+      .contact-info-story .row > div {
+        margin-bottom: 1rem;
+      }
+
+      .contact-info-story h6 {
+        color: var(--dark-color);
+        font-weight: 600;
+      }
+
+      /* Gallery Contact Section */
+      .gallery-contact-section {
+        margin-top: 3rem;
+      }
+
+      .contact-details .contact-item {
+        padding: 1rem 0;
+        border-bottom: 1px solid #e5e7eb;
+      }
+
+      .contact-details .contact-item:last-child {
+        border-bottom: none;
+      }
+
+      .contact-details h6 {
+        color: var(--dark-color);
+        font-weight: 600;
+      }
+
+      .office-hours .hours-item {
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #e5e7eb;
+      }
+
+      .office-hours .hours-item:last-child {
+        border-bottom: none;
+      }
+
+      /* Contact Section Enhancements */
+      .office-timing-details {
+        backdrop-filter: blur(10px);
+      }
+
+      .timing-table {
+        background: rgba(255,255,255,0.05);
+        border-radius: 10px;
+        padding: 1rem;
+      }
+
+      .timing-row {
+        font-size: 0.95rem;
+      }
+
+      .quick-contact .btn {
+        margin-bottom: 0.5rem;
+      }
+
+      /* Modal Enhancements */
+      .modal-content {
+        border-radius: 20px;
+        border: none;
+      }
+
+      .modal-header {
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        color: white;
+        border-radius: 20px 20px 0 0;
+      }
+
+      .modal-header .btn-close {
+        filter: invert(1);
+      }
+
+      .modal-body img {
+        border: 3px solid var(--light-color);
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        margin: 0 auto 1.5rem;
+      }
+
+      /* About Section */
+      .about-section {
+        padding: 80px 0;
+        background: white;
+      }
+
+      .about-img {
+        border-radius: 20px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        overflow: hidden;
+      }
+
+      /* Contact Section */
+      .contact-section {
+        padding: 80px 0;
+        background: linear-gradient(135deg, var(--dark-color), #374151);
+        color: white;
+      }
+
+      .contact-card {
+        background: rgba(255,255,255,0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        padding: 2rem;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+
+      .contact-card:hover {
+        background: rgba(255,255,255,0.15);
+        transform: translateY(-5px);
+      }
+
+      .contact-icon {
+        width: 60px;
+        height: 60px;
+        background: var(--accent-color);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        margin: 0 auto 1rem;
+      }
+
+      /* Gallery Section */
+      .gallery-section {
+        padding: 80px 0;
+        background: var(--light-color);
+      }
+
+      .gallery-item {
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+        margin-bottom: 2rem;
+      }
+
+      .gallery-item:hover {
+        transform: scale(1.05);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.1);
+      }
+
+      /* Floating Elements */
+      .floating-card {
+        animation: float 6s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
+      }
+
+      /* Custom Buttons */
+      .btn-custom {
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        border: none;
+        padding: 12px 30px;
+        border-radius: 50px;
+        color: white;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .btn-custom:hover {
+        background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(37,99,235,0.3);
+        color: white;
+      }
+
+      /* Navbar */
+      .navbar {
+        backdrop-filter: blur(10px);
+        background: rgba(31, 41, 55, 0.95) !important;
+        transition: all 0.3s ease;
+      }
+
+      .navbar-brand {
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: var(--accent-color) !important;
+      }
+
+      /* Footer */
+      footer {
+        background: linear-gradient(135deg, var(--dark-color), #111827);
+        color: white;
+      }
+
+      .social-links a {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        background: var(--primary-color);
+        color: white;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 50px;
+        margin: 0 10px;
+        transition: all 0.3s ease;
+      }
+
+      .social-links a:hover {
+        background: var(--accent-color);
+        transform: translateY(-5px);
+        color: white;
+      }
+
+      /* Section Headings */
+      .section-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--dark-color);
+        margin-bottom: 1rem;
+      }
+
+      .section-subtitle {
+        font-size: 1.2rem;
+        color: #6b7280;
+        margin-bottom: 3rem;
+      }
+
+      /* Form Validation */
+      .form-control.is-invalid {
+        border-color: #dc3545;
+        box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+      }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: var(--primary-color);
+        border-radius: 4px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--secondary-color);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-lg">
+      <div class="container">
+        <a
+          class="navbar-brand animate__animated animate__bounceIn"
+          href="#home"
+        >
+          <i class="bi bi-graph-up-arrow me-2"></i>RankMaster SEO
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#gallery">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+            <h1 class="animate__animated animate__fadeInDown">
+              Welcome to RankMaster SEO
+            </h1>
+            <p
+              class="lead animate__animated animate__fadeInUp animate__delay-1s"
+            >
+              <span id="typed-text"></span>
+            </p>
+            <div class="animate__animated animate__fadeInUp animate__delay-2s">
+              <a href="#services" class="btn btn-custom btn-lg me-3 hvr-grow"
+                >Our Services</a
+              >
+              <a href="#contact" class="btn btn-outline-light btn-lg hvr-grow"
+                >Get Quote</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="custom-shape-divider-bottom">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M985.66,92.83c-55.59,4.75-111.19,9.51-167.39,14.09C764,111,709.41,115.43,654,115.3c-55.33-.13-110.66-4.7-165.91-9.27-55.25-4.57-110.5-9.13-165.83-9.26-55.44-.13-110.87,4.31-166.31,8.74-55.44,4.44-110.87,8.88-166.31,13.31V0H1200V27.35C1141.19,51.6,1066.78,88.08,985.66,92.83Z"
+            class="shape-fill"
+          ></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- Service Modals -->
+    <!-- Keyword Research Modal -->
+    <div
+      class="modal fade"
+      id="keywordResearchModal"
+      tabindex="-1"
+      aria-labelledby="keywordResearchModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="keywordResearchModalLabel">
+              <i class="bi bi-search me-2"></i>Keyword Research & Strategy
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-4">
+                <img
+                  src="https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                  alt="Keyword Research"
+                  class="img-fluid rounded mb-3"
+                />
+              </div>
+              <div class="col-md-8">
+                <h6 class="text-primary mb-3">
+                  Comprehensive Keyword Analysis
+                </h6>
+                <p>
+                  Keyword research is the foundation of any successful SEO
+                  strategy. Our comprehensive keyword analysis involves
+                  identifying the words and phrases your target audience uses
+                  when searching for products or services like yours.
+                </p>
+
+                <h6 class="text-primary mb-2">What We Do:</h6>
+                <ul class="list-unstyled">
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle text-success me-2"></i
+                    ><strong>Search Intent Analysis:</strong> Understanding what
+                    users really want when they search
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle text-success me-2"></i
+                    ><strong>Competitor Research:</strong> Analyzing keywords
+                    your competitors rank for
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle text-success me-2"></i
+                    ><strong>Long-tail Keywords:</strong> Finding specific, less
+                    competitive phrases
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle text-success me-2"></i
+                    ><strong>Search Volume Analysis:</strong> Prioritizing
+                    keywords with optimal search volume
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle text-success me-2"></i
+                    ><strong>Keyword Difficulty Assessment:</strong> Evaluating
+                    competition levels
+                  </li>
+                </ul>
+
+                <p>
+                  Our strategic approach ensures you target keywords that not
+                  only drive traffic but also convert visitors into customers,
+                  maximizing your ROI and establishing long-term online
+                  authority.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="window.location.href='#contact'"
+            >
+              Get Started
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Local SEO Modal -->
+    <div
+      class="modal fade"
+      id="localSeoModal"
+      tabindex="-1"
+      aria-labelledby="localSeoModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="localSeoModalLabel">
+              <i class="bi bi-geo-alt me-2"></i>Local SEO Services
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-4">
+                <img
+                  src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                  alt="Local SEO"
+                  class="img-fluid rounded mb-3"
+                />
+              </div>
+              <div class="col-md-8">
+                <h6 class="text-primary mb-3">Dominate Local Search Results</h6>
+                <p>
+                  Local SEO is the process of optimizing your online presence to
+                  attract nearby customers and improve visibility in local
+                  search results. It's essential for businesses with physical
+                  locations or those serving specific geographic areas.
+                </p>
+
+                <h6 class="text-primary mb-2">
+                  Our Local SEO Services Include:
+                </h6>
+                <ul class="list-unstyled">
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle text-success me-2"></i
+                    ><strong>Google Business Profile Optimization:</strong>
+                    Complete setup and optimization
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle text-success me-2"></i
+                    ><strong>Local Citations:</strong> Building consistent NAP
+                    across directories
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle text-success me-2"></i
+                    ><strong>Review Management:</strong> Monitoring and
+                    responding to customer reviews
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle text-success me-2"></i
+                    ><strong>Local Keyword Targeting:</strong> "Near me" and
+                    geo-specific terms
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle text-success me-2"></i
+                    ><strong>Local Link Building:</strong> Acquiring links from
+                    local businesses and organizations
+                  </li>
+                </ul>
+
+                <p>
+                  With over 84% of prospects requiring digital capabilities to
+                  facilitate brand transactions, our local SEO strategies help
+                  you capture high-intent local customers and drive foot traffic
+                  to your business.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="window.location.href='#contact'"
+            >
+              Get Started
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content Optimization Modal -->
+    <div
+      class="modal fade"
+      id="contentOptimizationModal"
+      tabindex="-1"
+      aria-labelledby="contentOptimizationModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="contentOptimizationModalLabel">
+              <i class="bi bi-file-text me-2"></i>Content Optimization
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-4">
+                <img
+                  src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                  alt="Content Optimization"
+                  class="img-fluid rounded mb-3"
+                />
+              </div>
+              <div class="col-md-8">
+                <h6 class="text-primary mb-3">
+                  Strategic Content That Converts
+                </h6>
+                <p>
+                  Content optimization involves creating and refining website
+                  content to improve search engine rankings while providing
+                  value to your audience. Our approach focuses on aligning
+                  content with user intent and search algorithms.
+                </p>
+
+                <h6 class="text-primary mb-2">
+                  Our Content Optimization Process:
+                </h6>
+                <ul class="list-unstyled">
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle text-success me-2"></i
+                    ><strong>Content Audit:</strong> Analyzing existing content
+                    for optimization opportunities
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle text-success me-2"></i
+                    ><strong>On-Page SEO:</strong> Optimizing titles, meta
+                    descriptions, and headers
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle text-success me-2"></i
+                    ><strong>User Intent Matching:</strong> Creating content
+                    that answers user queries
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle text-success me-2"></i
+                    ><strong>Content Clusters:</strong> Building topic authority
+                    through interconnected content
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle text-success me-2"></i
+                    ><strong>Technical Optimization:</strong> Improving page
+                    speed and mobile experience
+                  </li>
+                </ul>
+
+                <p>
+                  Our content strategies have helped clients achieve significant
+                  improvements in search rankings and user engagement, with some
+                  seeing over 100% increases in organic traffic.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="window.location.href='#contact'"
+            >
+              Get Started
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEO Audit Modal -->
+    <div
+      class="modal fade"
+      id="seoAuditModal"
+      tabindex="-1"
+      aria-labelledby="seoAuditModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="seoAuditModalLabel">
+              <i class="bi bi-bar-chart me-2"></i>SEO Audits & Reporting
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-4">
+                <img
+                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                  alt="SEO Audit"
+                  class="img-fluid rounded mb-3"
+                />
+              </div>
+              <div class="col-md-8">
+                <h6 class="text-primary mb-3">
+                  Comprehensive SEO Analysis & Reporting
+                </h6>
+                <p>
+                  SEO audits are thorough assessments of your website's search
+                  engine optimization performance. Our detailed audits identify
+                  opportunities for improvement and provide actionable
+                  recommendations to boost your rankings.
+                </p>
+
+                <h6 class="text-primary mb-2">Our Audit Process Includes:</h6>
+                <ul class="list-unstyled">
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle text-success me-2"></i
+                    ><strong>Technical SEO Analysis:</strong> Site speed,
+                    crawlability, and indexation issues
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle text-success me-2"></i
+                    ><strong>On-Page Optimization Review:</strong> Content,
+                    keywords, and meta data analysis
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle text-success me-2"></i
+                    ><strong>Backlink Profile Assessment:</strong> Link quality
+                    and authority evaluation
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle text-success me-2"></i
+                    ><strong>Competitor Analysis:</strong> Benchmarking against
+                    top competitors
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle text-success me-2"></i
+                    ><strong>Monthly Performance Reports:</strong> Traffic,
+                    rankings, and ROI tracking
+                  </li>
+                </ul>
+
+                <p>
+                  Our comprehensive reporting includes actionable insights and
+                  clear recommendations, helping you understand your SEO
+                  performance and make data-driven decisions for sustainable
+                  growth.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="window.location.href='#contact'"
+            >
+              Get Started
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center mb-5">
+            <h2 class="section-title" data-aos="fade-up">Our SEO Services</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+              Comprehensive digital marketing solutions to boost your online
+              presence
+            </p>
+          </div>
+        </div>
+
+        <!-- Featured Services with Detailed Cards -->
+        <div class="row g-4 mb-5">
+          <div
+            class="col-lg-6 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div
+              class="featured-service-card"
+              data-bs-toggle="modal"
+              data-bs-target="#keywordResearchModal"
+            >
+              <div class="service-image">
+                <img
+                  src="https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                  alt="Keyword Research"
+                  class="img-fluid"
+                />
+                <div class="service-overlay">
+                  <div class="service-icon-featured">
+                    <i class="bi bi-search"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="service-content">
+                <h4>Keyword Research & Strategy</h4>
+                <p class="text-muted">
+                  Comprehensive keyword analysis to identify high-value search
+                  terms and create targeted content strategies.
+                </p>
+                <span class="read-more"
+                  >Click to learn more <i class="bi bi-arrow-right"></i
+                ></span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-6 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div
+              class="featured-service-card"
+              data-bs-toggle="modal"
+              data-bs-target="#localSeoModal"
+            >
+              <div class="service-image">
+                <img
+                  src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                  alt="Local SEO"
+                  class="img-fluid"
+                />
+                <div class="service-overlay">
+                  <div class="service-icon-featured">
+                    <i class="bi bi-geo-alt"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="service-content">
+                <h4>Local SEO Services</h4>
+                <p class="text-muted">
+                  Optimize your business for local search results and attract
+                  customers in your geographical area.
+                </p>
+                <span class="read-more"
+                  >Click to learn more <i class="bi bi-arrow-right"></i
+                ></span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-6 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div
+              class="featured-service-card"
+              data-bs-toggle="modal"
+              data-bs-target="#contentOptimizationModal"
+            >
+              <div class="service-image">
+                <img
+                  src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                  alt="Content Optimization"
+                  class="img-fluid"
+                />
+                <div class="service-overlay">
+                  <div class="service-icon-featured">
+                    <i class="bi bi-file-text"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="service-content">
+                <h4>Content Optimization</h4>
+                <p class="text-muted">
+                  High-quality, SEO-optimized content creation that engages your
+                  audience and establishes authority.
+                </p>
+                <span class="read-more"
+                  >Click to learn more <i class="bi bi-arrow-right"></i
+                ></span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-6 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div
+              class="featured-service-card"
+              data-bs-toggle="modal"
+              data-bs-target="#seoAuditModal"
+            >
+              <div class="service-image">
+                <img
+                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                  alt="SEO Audit"
+                  class="img-fluid"
+                />
+                <div class="service-overlay">
+                  <div class="service-icon-featured">
+                    <i class="bi bi-bar-chart"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="service-content">
+                <h4>SEO Audits & Reporting</h4>
+                <p class="text-muted">
+                  Comprehensive tracking and detailed reports showing your SEO
+                  progress and ROI metrics.
+                </p>
+                <span class="read-more"
+                  >Click to learn more <i class="bi bi-arrow-right"></i
+                ></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Additional Services -->
+        <div class="row g-4 mb-5">
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="500"
+          >
+            <div class="service-card floating-card">
+              <div class="service-icon">
+                <i class="bi bi-gear"></i>
+              </div>
+              <h4 class="mb-3">Technical SEO Optimization</h4>
+              <p class="text-muted">
+                Complete technical audit and optimization of your website's
+                performance, including site speed, mobile responsiveness, and
+                search engine crawlability.
+              </p>
+              <ul class="list-unstyled mt-3">
+                <li>
+                  <i class="bi bi-check-circle text-success me-2"></i>Site Speed
+                  Optimization
+                </li>
+                <li>
+                  <i class="bi bi-check-circle text-success me-2"></i>Mobile
+                  Optimization
+                </li>
+                <li>
+                  <i class="bi bi-check-circle text-success me-2"></i>Schema
+                  Markup
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="600"
+          >
+            <div class="service-card floating-card">
+              <div class="service-icon">
+                <i class="bi bi-link-45deg"></i>
+              </div>
+              <h4 class="mb-3">Link Building & Authority</h4>
+              <p class="text-muted">
+                Strategic link building campaigns to increase your website's
+                domain authority and improve search engine rankings through
+                quality backlinks.
+              </p>
+              <ul class="list-unstyled mt-3">
+                <li>
+                  <i class="bi bi-check-circle text-success me-2"></i>Quality
+                  Backlink Acquisition
+                </li>
+                <li>
+                  <i class="bi bi-check-circle text-success me-2"></i>Guest
+                  Posting
+                </li>
+                <li>
+                  <i class="bi bi-check-circle text-success me-2"></i>Directory
+                  Submissions
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Information in Services -->
+        <div class="row">
+          <div class="col-lg-12" data-aos="fade-up">
+            <div
+              class="services-contact-section bg-primary text-white rounded-4 p-4"
+            >
+              <div class="row align-items-center">
+                <div class="col-lg-8">
+                  <h4 class="mb-2">Ready to boost your online presence?</h4>
+                  <p class="mb-0">
+                    Get in touch with our SEO experts today for a free
+                    consultation
+                  </p>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                  <div class="contact-info-compact">
+                    <div class="mb-2">
+                      <i class="bi bi-telephone me-2"></i>
+                      <strong>+91 9080654251</strong>
+                    </div>
+                    <div class="mb-2">
+                      <i class="bi bi-envelope me-2"></i>
+                      <strong>godwin@gmail.com</strong>
+                    </div>
+                    <div>
+                      <i class="bi bi-geo-alt me-2"></i>
+                      <strong>Tiruchirappalli, Tamil Nadu</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <div class="row align-items-center mb-5">
+          <div class="col-lg-6" data-aos="fade-right">
+            <div class="about-img">
+              <img
+                src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                alt="SEO Team"
+                class="img-fluid"
+              />
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-left">
+            <h2 class="section-title">About RankMaster SEO</h2>
+            <p class="section-subtitle">
+              Your trusted partner in digital growth
+            </p>
+            <p class="mb-4">
+              With over 5 years of experience in the digital marketing industry,
+              RankMaster SEO has helped hundreds of businesses achieve their
+              online goals. Our team of certified SEO experts uses proven
+              strategies and cutting-edge techniques to deliver measurable
+              results.
+            </p>
+            <div class="row g-3 mb-4">
+              <div class="col-6">
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-award text-primary fs-3 me-3"></i>
+                  <div>
+                    <h5 class="mb-0">500+</h5>
+                    <small class="text-muted">Projects Completed</small>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-people text-primary fs-3 me-3"></i>
+                  <div>
+                    <h5 class="mb-0">300+</h5>
+                    <small class="text-muted">Happy Clients</small>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-graph-up text-primary fs-3 me-3"></i>
+                  <div>
+                    <h5 class="mb-0">150%</h5>
+                    <small class="text-muted">Average Traffic Increase</small>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-star text-primary fs-3 me-3"></i>
+                  <div>
+                    <h5 class="mb-0">4.9/5</h5>
+                    <small class="text-muted">Client Satisfaction</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a href="#contact" class="btn btn-custom btn-lg hvr-grow"
+              >Start Your SEO Journey</a
+            >
+          </div>
+        </div>
+
+        <!-- Our Story Section -->
+        <div class="row">
+          <div class="col-lg-12" data-aos="fade-up">
+            <div class="story-section bg-light rounded-4 p-5">
+              <h3 class="mb-4 text-center">Our Story</h3>
+              <p class="lead text-center mb-4">
+                Founded with a vision to help businesses dominate the digital
+                landscape through strategic SEO services
+              </p>
+              <div class="row">
+                <div class="col-lg-8 mx-auto">
+                  <p class="mb-4">
+                    RankMaster SEO was born from the understanding that in
+                    today's digital-first world, businesses need more than just
+                    a website – they need visibility, authority, and a strategic
+                    approach to search engine optimization. Our journey began
+                    when we witnessed countless businesses struggling to get
+                    noticed online despite offering exceptional products and
+                    services.
+                  </p>
+
+                  <p class="mb-4">
+                    We recognized that effective SEO is not just about ranking
+                    higher in search results; it's about connecting businesses
+                    with their ideal customers at the exact moment they're
+                    searching for solutions. This insight led us to develop
+                    comprehensive SEO strategies that focus on understanding
+                    search intent, creating valuable content, and building
+                    long-term digital authority.
+                  </p>
+
+                  <p class="mb-4">
+                    Our approach combines technical expertise with creative
+                    content strategies, ensuring that every client receives a
+                    tailored solution that drives measurable results. From
+                    keyword research and on-page optimization to link building
+                    and local SEO, we've helped businesses across various
+                    industries achieve their digital marketing goals and
+                    establish a strong online presence that generates consistent
+                    leads and revenue.
+                  </p>
+
+                  <div class="contact-info-story mt-5">
+                    <div class="row g-4">
+                      <div class="col-md-6">
+                        <div class="d-flex align-items-center">
+                          <i class="bi bi-telephone text-primary fs-4 me-3"></i>
+                          <div>
+                            <h6 class="mb-0">Call Us</h6>
+                            <span class="text-muted">+91 9080654251</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="d-flex align-items-center">
+                          <i class="bi bi-envelope text-primary fs-4 me-3"></i>
+                          <div>
+                            <h6 class="mb-0">Email</h6>
+                            <span class="text-muted">godwin@gmail.com</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="d-flex align-items-start">
+                          <i
+                            class="bi bi-geo-alt text-primary fs-4 me-3 mt-1"
+                          ></i>
+                          <div>
+                            <h6 class="mb-2">Visit Our Office</h6>
+                            <p class="text-muted mb-0">
+                              No 4/63 A, 5th Cross Street, Bhelpur Koothappar<br />
+                              Thiruverumbur (tp), PO: Thiruverumbur<br />
+                              DIST: Tiruchirappalli, Tamil Nadu - 620013
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center mb-5">
+            <h2 class="section-title" data-aos="fade-up">Our Work Gallery</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+              Visual showcase of our company and achievements
+            </p>
+          </div>
+        </div>
+
+        <!-- Office Images -->
+        <div class="row g-4 mb-5">
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="zoom-in"
+            data-aos-delay="100"
+          >
+            <div class="gallery-item">
+              <img
+                src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                alt="RankMaster SEO Office - Main Workspace"
+              />
+              <div class="p-3">
+                <h5>Our Main Office</h5>
+                <p class="text-muted mb-0">
+                  RankMaster SEO headquarters in Tiruchirappalli
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="zoom-in"
+            data-aos-delay="200"
+          >
+            <div class="gallery-item">
+              <img
+                src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                alt="RankMaster SEO Conference Room"
+              />
+              <div class="p-3">
+                <h5>Conference Room</h5>
+                <p class="text-muted mb-0">
+                  Where we plan winning SEO strategies
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="zoom-in"
+            data-aos-delay="300"
+          >
+            <div class="gallery-item">
+              <img
+                src="https://images.unsplash.com/photo-1586880244406-556ebe35f282?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                alt="RankMaster SEO Reception Area"
+              />
+              <div class="p-3">
+                <h5>Reception Area</h5>
+                <p class="text-muted mb-0">
+                  Welcome area for our valued clients
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="zoom-in"
+            data-aos-delay="400"
+          >
+            <div class="gallery-item">
+              <img
+                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                alt="RankMaster SEO Work Stations"
+              />
+              <div class="p-3">
+                <h5>Creative Workstations</h5>
+                <p class="text-muted mb-0">Where SEO magic happens daily</p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="zoom-in"
+            data-aos-delay="500"
+          >
+            <div class="gallery-item">
+              <img
+                src="https://images.unsplash.com/photo-1552581234-26160f608093?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                alt="RankMaster SEO Team Meeting"
+              />
+              <div class="p-3">
+                <h5>Team Collaboration</h5>
+                <p class="text-muted mb-0">
+                  Daily strategy and planning sessions
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="zoom-in"
+            data-aos-delay="500"
+          >
+            <div class="gallery-item">
+              <img
+                src="https://images.unsplash.com/photo-1552581234-26160f608093?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                alt="RankMaster SEO Team Meeting"
+              />
+              <div class="p-3">
+                <h5>Break Area</h5>
+                <p class="text-muted mb-0">
+                  Relaxation space for creative thinking
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Previous Gallery Items -->
+        <div class="row g-4 mb-5">
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="zoom-in"
+            data-aos-delay="700"
+          >
+            <div class="gallery-item">
+              <img
+                src="https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                alt="Analytics Dashboard"
+              />
+              <div class="p-3">
+                <h5>Analytics & Reports</h5>
+                <p class="text-muted mb-0">Data-driven results tracking</p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="zoom-in"
+            data-aos-delay="800"
+          >
+            <div class="gallery-item">
+              <img
+                src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                alt="Client Success"
+              />
+              <div class="p-3">
+                <h5>Client Success Stories</h5>
+                <p class="text-muted mb-0">Celebrating achievements together</p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="zoom-in"
+            data-aos-delay="900"
+          >
+            <div class="gallery-item">
+              <img
+                src="https://images.unsplash.com/photo-1553484771-371a605b060b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                alt="Digital Marketing"
+              />
+              <div class="p-3">
+                <h5>Digital Innovation</h5>
+                <p class="text-muted mb-0">Cutting-edge marketing solutions</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gallery Contact Information -->
+        <div class="row">
+          <div class="col-lg-12" data-aos="fade-up">
+            <div class="gallery-contact-section bg-white rounded-4 p-5 shadow">
+              <div class="row">
+                <div class="col-lg-6">
+                  <h4 class="mb-4">Visit Our Office</h4>
+                  <p class="text-muted mb-4">
+                    We'd love to meet you in person! Schedule a visit to our
+                    office and see where the SEO magic happens.
+                  </p>
+
+                  <div class="contact-details">
+                    <div class="contact-item mb-3">
+                      <div class="d-flex align-items-start">
+                        <i
+                          class="bi bi-geo-alt-fill text-primary fs-4 me-3 mt-1"
+                        ></i>
+                        <div>
+                          <h6 class="mb-1">Office Address</h6>
+                          <p class="text-muted mb-0">
+                            No 4/63 A, 5th Cross Street<br />
+                            Bhelpur Koothappar, Thiruverumbur (tp)<br />
+                            PO: Thiruverumbur, DIST: Tiruchirappalli<br />
+                            Tamil Nadu - 620013
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="contact-item mb-3">
+                      <div class="d-flex align-items-center">
+                        <i
+                          class="bi bi-telephone-fill text-primary fs-4 me-3"
+                        ></i>
+                        <div>
+                          <h6 class="mb-1">Phone Number</h6>
+                          <p class="text-muted mb-0">+91 9080654251</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="contact-item mb-3">
+                      <div class="d-flex align-items-center">
+                        <i
+                          class="bi bi-envelope-fill text-primary fs-4 me-3"
+                        ></i>
+                        <div>
+                          <h6 class="mb-1">Email Address</h6>
+                          <p class="text-muted mb-0">godwin@gmail.com</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-6">
+                  <h4 class="mb-4">Office Hours</h4>
+                  <div class="office-hours">
+                    <div class="hours-item d-flex justify-content-between mb-2">
+                      <span><strong>Monday - Saturday:</strong></span>
+                      <span class="text-primary">9:00 AM - 7:00 PM</span>
+                    </div>
+                    <div class="hours-item d-flex justify-content-between mb-4">
+                      <span><strong>Sunday:</strong></span>
+                      <span class="text-muted">Closed</span>
+                    </div>
+
+                    <div class="mt-4">
+                      <a href="#contact" class="btn btn-primary btn-lg me-3"
+                        >Schedule Visit</a
+                      >
+                      <a
+                        href="tel:+919080654251"
+                        class="btn btn-outline-primary btn-lg"
+                        >Call Now</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center mb-5">
+            <h2 class="section-title text-white" data-aos="fade-up">
+              Get In Touch
+            </h2>
+            <p
+              class="section-subtitle text-light"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              Ready to boost your online presence? Let's talk!
+            </p>
+          </div>
+        </div>
+        <div class="row g-4 align-items-stretch">
+          <!-- Contact Info Card (from contact.html) -->
+          <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="card border-0 shadow h-100 rounded-4">
+              <div class="card-body">
+                <h4 class="mb-4 text-primary">
+                  <i class="bi bi-person-lines-fill me-2"></i>
+                  Contact Information
+                </h4>
+                <ul class="list-unstyled mb-4">
+                  <li class="mb-3">
+                    <i class="bi bi-telephone text-primary me-2"></i>
+                    <span class="fw-bold">+91 9080654251</span>
+                  </li>
+                  <li class="mb-3">
+                    <i class="bi bi-envelope text-primary me-2"></i>
+                    <span class="fw-bold">godwin@gmail.com</span>
+                  </li>
+                  <li class="mb-3">
+                    <i class="bi bi-geo-alt text-primary me-2"></i>
+                    <span>
+                      No 4/63 A, 5th Cross Street, Bhelpur Koothappar, Thiruverumbur (tp),<br>
+                      PO: Thiruverumbur, DIST: Tiruchirappalli,<br>
+                      Tamil Nadu - 620013
+                    </span>
+                  </li>
+                </ul>
+                <div class="border-top pt-3">
+                  <div class="mb-2">
+                    <i class="bi bi-clock text-primary me-2"></i>
+                    <span class="fw-bold">Office Hours</span>
+                  </div>
+                  <div>
+                    Monday – Saturday: 9:00 AM – 7:00 PM<br>
+                    Sunday: Closed
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Location Card (from contact.html) -->
+          <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="card border-0 shadow h-100 rounded-4">
+              <div class="card-body">
+                <h4 class="mb-4 text-danger">
+                  <i class="bi bi-geo-alt-fill me-2"></i>
+                  Our Location
+                </h4>
+                <div class="ratio ratio-16x9 rounded-3 overflow-hidden">
+                  <iframe
+                    src="https://www.google.com/maps?q=No+4/63+A,+5th+Cross+Street,+Bhelpur+Koothappar,+Thiruverumbur,+Tiruchirappalli,+Tamil+Nadu+620013&output=embed"
+                    width="100%"
+                    height="100%"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="RankMaster SEO Location"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-5">
+          <div class="col-lg-8 mx-auto" data-aos="fade-up" data-aos-delay="500">
+            <div class="contact-form bg-white p-5 rounded-4">
+              <h4 class="text-dark mb-4">Send us a Message</h4>
+              <form>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Your Name"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <input
+                      type="email"
+                      class="form-control"
+                      placeholder="Your Email"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <input
+                      type="tel"
+                      class="form-control"
+                      placeholder="Your Phone"
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Your Website"
+                    />
+                  </div>
+                  <div class="col-12">
+                    <select class="form-select">
+                      <option selected>Select Service</option>
+                      <option>SEO Audit</option>
+                      <option>Keyword Research</option>
+                      <option>Content Marketing</option>
+                      <option>Local SEO</option>
+                      <option>Technical SEO</option>
+                      <option>Link Building</option>
+                    </select>
+                  </div>
+                  <div class="col-12">
+                    <textarea
+                      class="form-control"
+                      rows="4"
+                      placeholder="Tell us about your project..."
+                    ></textarea>
+                  </div>
+                  <div class="col-12 text-center">
+                    <button
+                      type="submit"
+                      class="btn btn-custom btn-lg hvr-grow"
+                    >
+                      Send Message
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <h5 class="text-warning mb-3">
+              <i class="bi bi-graph-up-arrow me-2"></i>RankMaster SEO
+            </h5>
+            <p class="text-light opacity-75 mb-4">
+              Your trusted partner in digital growth. We help businesses achieve
+              higher search rankings, increased traffic, and better online
+              visibility through proven SEO strategies.
+            </p>
+            <div class="social-links">
+              <a href="#" class="hvr-grow"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="hvr-grow"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="hvr-grow"><i class="bi bi-linkedin"></i></a>
+              <a href="#" class="hvr-grow"><i class="bi bi-instagram"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-2">
+            <h6 class="text-warning mb-3">Quick Links</h6>
+            <ul class="list-unstyled">
+              <li>
+                <a
+                  href="#home"
+                  class="text-light opacity-75 text-decoration-none"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  class="text-light opacity-75 text-decoration-none"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  class="text-light opacity-75 text-decoration-none"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#gallery"
+                  class="text-light opacity-75 text-decoration-none"
+                  >Gallery</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="text-light opacity-75 text-decoration-none"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-3">
+            <h6 class="text-warning mb-3">Our Services</h6>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#" class="text-light opacity-75 text-decoration-none"
+                  >SEO Optimization</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-light opacity-75 text-decoration-none"
+                  >Keyword Research</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-light opacity-75 text-decoration-none"
+                  >Content Marketing</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-light opacity-75 text-decoration-none"
+                  >Local SEO</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-light opacity-75 text-decoration-none"
+                  >Link Building</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-3">
+            <h6 class="text-warning mb-3">Contact Info</h6>
+            <ul class="list-unstyled">
+              <li class="text-light opacity-75 mb-2">
+                <i class="bi bi-geo-alt me-2"></i>No 4/63 A, 5th Cross Street<br />
+                <span class="ms-4">Bhelpur Koothappar, Thiruverumbur (tp)</span
+                ><br />
+                <span class="ms-4"
+                  >PO: Thiruverumbur, DIST: Tiruchirappalli</span
+                ><br />
+                <span class="ms-4">Tamil Nadu - 620013</span>
+              </li>
+              <li class="text-light opacity-75 mb-2">
+                <i class="bi bi-telephone me-2"></i>+91 9080654251
+              </li>
+              <li class="text-light opacity-75 mb-2">
+                <i class="bi bi-envelope me-2"></i>godwin@gmail.com
+              </li>
+              <li class="text-light opacity-75">
+                <i class="bi bi-clock me-2"></i>Mon-Sat: 9AM-7PM, Sun: Closed
+              </li>
+            </ul>
+          </div>
+        </div>
+        <hr class="my-4 opacity-25" />
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <p class="text-light opacity-75 mb-0">
+              &copy; 2025 RankMaster SEO. All Rights Reserved.
+            </p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <a href="#" class="text-light opacity-75 text-decoration-none me-3"
+              >Privacy Policy</a
+            >
+            <a href="#" class="text-light opacity-75 text-decoration-none"
+              >Terms of Service</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- AOS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <!-- Typed.js -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    <script>
+      // Initialize AOS
+      AOS.init({
+        duration: 1200,
+        once: true,
+        offset: 100,
+      });
+
+      // Typed.js for hero text
+      var typed = new Typed("#typed-text", {
+        strings: [
+          "We Optimize Your Website 🚀",
+          "We Boost Your Rankings 📈",
+          "We Drive Quality Traffic 🎯",
+          "We Grow Your Business 💼",
+        ],
+        typeSpeed: 50,
+        backSpeed: 30,
+        loop: true,
+        backDelay: 2000,
+      });
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+
+      // Navbar background on scroll
+      window.addEventListener("scroll", function () {
+        const navbar = document.querySelector(".navbar");
+        if (window.scrollY > 50) {
+          navbar.style.background = "rgba(31, 41, 55, 0.98)";
+        } else {
+          navbar.style.background = "rgba(31, 41, 55, 0.95)";
+        }
+      });
+
+      // Form submission handler
+      const form = document.querySelector("form");
+      if (form) {
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          // Simple form validation
+          const inputs = this.querySelectorAll(
+            "input[required], select[required], textarea[required]"
+          );
+          let isValid = true;
+
+          inputs.forEach((input) => {
+            if (!input.value.trim()) {
+              isValid = false;
+              input.classList.add("is-invalid");
+            } else {
+              input.classList.remove("is-invalid");
+            }
+          });
+
+          if (isValid) {
+            // Show success message (in real implementation, send to server)
+            alert(
+              "Thank you for your message! We will get back to you within 24 hours."
+            );
+            this.reset();
+          } else {
+            alert("Please fill in all required fields.");
+          }
+        });
+      }
+
+      // Add floating animation delay to service cards
+      document.querySelectorAll(".floating-card").forEach((card, index) => {
+        card.style.animationDelay = `${index * 0.5}s`;
+      });
+
+      // Intersection Observer for counter animation
+      const counters = document.querySelectorAll(".col-6 h5");
+      const observerOptions = {
+        threshold: 0.7,
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const counter = entry.target;
+            const targetText = counter.textContent;
+            const target = parseInt(targetText);
+
+            if (!isNaN(target)) {
+              let count = 0;
+              const increment = target / 50;
+
+              const updateCounter = () => {
+                if (count < target) {
+                  count += increment;
+                  const currentValue = Math.ceil(count);
+                  if (targetText.includes("%")) {
+                    counter.textContent = currentValue + "%";
+                  } else if (targetText.includes("+")) {
+                    counter.textContent = currentValue + "+";
+                  } else if (targetText.includes("/")) {
+                    counter.textContent = currentValue + "/5";
+                  } else {
+                    counter.textContent = currentValue + "+";
+                  }
+                  requestAnimationFrame(updateCounter);
+                } else {
+                  counter.textContent = targetText;
+                }
+              };
+
+              updateCounter();
+              observer.unobserve(counter);
+            }
+          }
+        });
+      }, observerOptions);
+
+      counters.forEach((counter) => {
+        observer.observe(counter);
+      });
+
+      // Add scroll effect to navbar
+      window.addEventListener("scroll", function () {
+        const navbar = document.querySelector(".navbar");
+        if (window.scrollY > 100) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+
+      // Preloader (optional)
+      window.addEventListener("load", function () {
+        document.body.classList.add("loaded");
+      });
+    </script>
+  </body>
+</html>
